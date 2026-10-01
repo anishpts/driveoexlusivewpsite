@@ -1,9 +1,29 @@
-wp-content/uploads/
-wp-content/cache/
-wp-content/plugins/
-wp-content/upgrade/
-wp-content/languages/
-wp-admin/
-wp-includes/
+@"
+# WordPress core
+/wp-admin/
+/wp-includes/
+/wp-*.php
+/index.php
+/xmlrpc.php
+/license.txt
+/readme.html
+
+# Config / secrets
+/wp-config.php
 *.sql
+*.sql.gz
 .env
+.env.*
+
+# Runtime / user-generated
+/wp-content/uploads/
+/wp-content/cache/
+/wp-content/upgrade/
+/wp-content/languages/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+"@ | Set-Content .gitignore
