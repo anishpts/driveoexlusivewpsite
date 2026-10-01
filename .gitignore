@@ -1,0 +1,9 @@
+wp-content/uploads/
+wp-content/cache/
+wp-content/plugins/
+wp-content/upgrade/
+wp-content/languages/
+wp-admin/
+wp-includes/
+*.sql
+.env

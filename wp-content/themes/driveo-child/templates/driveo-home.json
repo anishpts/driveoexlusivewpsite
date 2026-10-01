@@ -1,0 +1,2030 @@
+{
+    "version": "0.4",
+    "title": "Driveo — One page",
+    "type": "wp-page",
+    "page_settings": {
+        "hide_title": "yes"
+    },
+    "content": [
+        {
+            "id": "ec357c4",
+            "elType": "container",
+            "settings": {
+                "content_width": "full",
+                "html_tag": "header",
+                "css_classes": "dx-header",
+                "_title": "Header",
+                "flex_direction": "row"
+            },
+            "elements": [
+                {
+                    "id": "d455c7b",
+                    "elType": "container",
+                    "settings": {
+                        "content_width": "full",
+                        "html_tag": "div",
+                        "css_classes": "dx-brand",
+                        "flex_direction": "row"
+                    },
+                    "elements": [
+                        {
+                            "id": "4bbb8c2",
+                            "elType": "widget",
+                            "settings": {
+                                "link": {
+                                    "url": "#top",
+                                    "is_external": "",
+                                    "nofollow": ""
+                                },
+                                "_css_classes": "dx-logo "
+                            },
+                            "elements": [],
+                            "widgetType": "driveo-logo"
+                        },
+                        {
+                            "id": "025add6",
+                            "elType": "widget",
+                            "settings": {
+                                "title": "Atelier Chauffeurs",
+                                "header_size": "div",
+                                "link": {
+                                    "url": "#top",
+                                    "is_external": "",
+                                    "nofollow": ""
+                                },
+                                "_css_classes": "dx-brand-name"
+                            },
+                            "elements": [],
+                            "widgetType": "heading"
+                        }
+                    ],
+                    "isInner": true
+                },
+                {
+                    "id": "52d30d6",
+                    "elType": "widget",
+                    "settings": {
+                        "shortcode": "[driveo_nav label=\"Main navigation\" menu_label=\"Menu\"]",
+                        "_css_classes": "dx-header-nav"
+                    },
+                    "elements": [],
+                    "widgetType": "shortcode"
+                },
+                {
+                    "id": "4af46ac",
+                    "elType": "widget",
+                    "settings": {
+                        "text": "Request quote",
+                        "link": {
+                            "url": "#quote",
+                            "is_external": "",
+                            "nofollow": "",
+                            "custom_attributes": ""
+                        },
+                        "_css_classes": "dx-btn dx-btn--primary dx-btn--arrow dx-header-cta"
+                    },
+                    "elements": [],
+                    "widgetType": "button"
+                }
+            ],
+            "isInner": false
+        },
+        {
+            "id": "c9a6545",
+            "elType": "container",
+            "settings": {
+                "content_width": "full",
+                "html_tag": "main",
+                "css_classes": "dx-main",
+                "_element_id": "main",
+                "_title": "Main",
+                "flex_direction": "column"
+            },
+            "elements": [
+                {
+                    "id": "a79e92f",
+                    "elType": "container",
+                    "settings": {
+                        "content_width": "full",
+                        "html_tag": "section",
+                        "css_classes": "dx-hero",
+                        "_element_id": "top",
+                        "_title": "Hero",
+                        "flex_direction": "column"
+                    },
+                    "elements": [
+                        {
+                            "id": "716fa42",
+                            "elType": "widget",
+                            "settings": {
+                                "video": {
+                                    "id": "{{media:hero-video:id}}",
+                                    "url": "{{media:hero-video:url}}"
+                                },
+                                "video_mobile": {
+                                    "id": "{{media:hero-video-sm:id}}",
+                                    "url": "{{media:hero-video-sm:url}}"
+                                },
+                                "poster": {
+                                    "id": "{{media:hero-poster:id}}",
+                                    "url": "{{media:hero-poster:url}}"
+                                },
+                                "rail": "Discreet\nPunctual\nComposed",
+                                "pause_label": "Pause background video",
+                                "play_label": "Play background video",
+                                "_css_classes": "dx-hero-media"
+                            },
+                            "elements": [],
+                            "widgetType": "driveo-hero-media"
+                        },
+                        {
+                            "id": "8983220",
+                            "elType": "container",
+                            "settings": {
+                                "content_width": "full",
+                                "html_tag": "div",
+                                "css_classes": "dx-hero-content",
+                                "flex_direction": "column"
+                            },
+                            "elements": [
+                                {
+                                    "id": "755abac",
+                                    "elType": "widget",
+                                    "settings": {
+                                        "_css_classes": "dx-logo dx-logo--xl dx-hero-logo"
+                                    },
+                                    "elements": [],
+                                    "widgetType": "driveo-logo"
+                                },
+                                {
+                                    "id": "db504ea",
+                                    "elType": "widget",
+                                    "settings": {
+                                        "title": "Chauffeured travel · By appointment",
+                                        "header_size": "p",
+                                        "_css_classes": "dx-eyebrow dx-rise"
+                                    },
+                                    "elements": [],
+                                    "widgetType": "heading"
+                                },
+                                {
+                                    "id": "dd89c4d",
+                                    "elType": "widget",
+                                    "settings": {
+                                        "title": "Discreet travel. <em>Arrive at ease.</em>",
+                                        "header_size": "h1",
+                                        "_css_classes": "dx-hero-title dx-rise-delay"
+                                    },
+                                    "elements": [],
+                                    "widgetType": "heading"
+                                },
+                                {
+                                    "id": "94ea6f4",
+                                    "elType": "widget",
+                                    "settings": {
+                                        "editor": "<p>Fares agreed in writing before you travel, professional drivers in business dress, flights monitored as standard and cars kept spotless. Privacy is part of the service.</p>",
+                                        "_css_classes": "dx-hero-lede"
+                                    },
+                                    "elements": [],
+                                    "widgetType": "text-editor"
+                                },
+                                {
+                                    "id": "c299adb",
+                                    "elType": "container",
+                                    "settings": {
+                                        "content_width": "full",
+                                        "html_tag": "div",
+                                        "css_classes": "dx-hero-actions",
+                                        "flex_direction": "row"
+                                    },
+                                    "elements": [
+                                        {
+                                            "id": "2f59d2c",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "text": "Get a fixed quote",
+                                                "link": {
+                                                    "url": "#quote",
+                                                    "is_external": "",
+                                                    "nofollow": "",
+                                                    "custom_attributes": ""
+                                                },
+                                                "_css_classes": "dx-btn dx-btn--primary dx-btn--lg dx-btn--arrow"
+                                            },
+                                            "elements": [],
+                                            "widgetType": "button"
+                                        },
+                                        {
+                                            "id": "3936604",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "items": [
+                                                    {
+                                                        "_id": "c0343e4",
+                                                        "url": {
+                                                            "url": "https://wa.me/447700900000",
+                                                            "is_external": "on",
+                                                            "nofollow": ""
+                                                        },
+                                                        "label": "Message us on WhatsApp (opens in a new tab)"
+                                                    }
+                                                ],
+                                                "size": "lg",
+                                                "list_label": "Contact"
+                                            },
+                                            "elements": [],
+                                            "widgetType": "driveo-social-links"
+                                        }
+                                    ],
+                                    "isInner": true
+                                },
+                                {
+                                    "id": "15a068b",
+                                    "elType": "widget",
+                                    "settings": {
+                                        "editor": "<ul><li>London</li><li>Paris</li><li>Bulgaria</li><li>Dubai</li></ul>",
+                                        "_css_classes": "dx-hero-cities"
+                                    },
+                                    "elements": [],
+                                    "widgetType": "text-editor"
+                                }
+                            ],
+                            "isInner": true
+                        }
+                    ],
+                    "isInner": true
+                },
+                {
+                    "id": "cea3b3d",
+                    "elType": "container",
+                    "settings": {
+                        "content_width": "full",
+                        "html_tag": "section",
+                        "css_classes": "dx-section dx-section--alt dx-assurance",
+                        "_element_id": "assurance",
+                        "_title": "Assurance",
+                        "container_type": "grid",
+                        "grid_columns_grid": {
+                            "unit": "fr",
+                            "size": 4,
+                            "sizes": []
+                        },
+                        "grid_columns_grid_tablet": {
+                            "unit": "fr",
+                            "size": 2,
+                            "sizes": []
+                        },
+                        "grid_columns_grid_mobile_extra": {
+                            "unit": "fr",
+                            "size": 2,
+                            "sizes": []
+                        },
+                        "grid_rows_grid": {
+                            "unit": "custom",
+                            "size": "auto",
+                            "sizes": []
+                        }
+                    },
+                    "elements": [
+                        {
+                            "id": "993a4fb",
+                            "elType": "widget",
+                            "settings": {
+                                "title": "Our standards",
+                                "_css_classes": "dx-sr"
+                            },
+                            "elements": [],
+                            "widgetType": "heading"
+                        },
+                        {
+                            "id": "a625a91",
+                            "elType": "container",
+                            "settings": {
+                                "content_width": "full",
+                                "html_tag": "article",
+                                "css_classes": "dx-assure",
+                                "flex_direction": "column"
+                            },
+                            "elements": [
+                                {
+                                    "id": "ce5890b",
+                                    "elType": "widget",
+                                    "settings": {
+                                        "title": "01",
+                                        "header_size": "p",
+                                        "_css_classes": "dx-index"
+                                    },
+                                    "elements": [],
+                                    "widgetType": "heading"
+                                },
+                                {
+                                    "id": "bc98fb4",
+                                    "elType": "widget",
+                                    "settings": {
+                                        "title": "Professional drivers",
+                                        "header_size": "h3",
+                                        "_css_classes": "dx-card-title"
+                                    },
+                                    "elements": [],
+                                    "widgetType": "heading"
+                                },
+                                {
+                                    "id": "a94d7ed",
+                                    "elType": "widget",
+                                    "settings": {
+                                        "editor": "<p>Licensed, background-checked and dressed for business.</p>",
+                                        "_css_classes": "dx-card-copy"
+                                    },
+                                    "elements": [],
+                                    "widgetType": "text-editor"
+                                }
+                            ],
+                            "isInner": true
+                        },
+                        {
+                            "id": "b8058cf",
+                            "elType": "container",
+                            "settings": {
+                                "content_width": "full",
+                                "html_tag": "article",
+                                "css_classes": "dx-assure",
+                                "flex_direction": "column"
+                            },
+                            "elements": [
+                                {
+                                    "id": "a997de4",
+                                    "elType": "widget",
+                                    "settings": {
+                                        "title": "02",
+                                        "header_size": "p",
+                                        "_css_classes": "dx-index"
+                                    },
+                                    "elements": [],
+                                    "widgetType": "heading"
+                                },
+                                {
+                                    "id": "a77dee7",
+                                    "elType": "widget",
+                                    "settings": {
+                                        "title": "Flights monitored",
+                                        "header_size": "h3",
+                                        "_css_classes": "dx-card-title"
+                                    },
+                                    "elements": [],
+                                    "widgetType": "heading"
+                                },
+                                {
+                                    "id": "5eae85a",
+                                    "elType": "widget",
+                                    "settings": {
+                                        "editor": "<p>Pickup times move with your arrival, automatically.</p>",
+                                        "_css_classes": "dx-card-copy"
+                                    },
+                                    "elements": [],
+                                    "widgetType": "text-editor"
+                                }
+                            ],
+                            "isInner": true
+                        },
+                        {
+                            "id": "6400d7c",
+                            "elType": "container",
+                            "settings": {
+                                "content_width": "full",
+                                "html_tag": "article",
+                                "css_classes": "dx-assure",
+                                "flex_direction": "column"
+                            },
+                            "elements": [
+                                {
+                                    "id": "e647b41",
+                                    "elType": "widget",
+                                    "settings": {
+                                        "title": "03",
+                                        "header_size": "p",
+                                        "_css_classes": "dx-index"
+                                    },
+                                    "elements": [],
+                                    "widgetType": "heading"
+                                },
+                                {
+                                    "id": "af3d55d",
+                                    "elType": "widget",
+                                    "settings": {
+                                        "title": "Fares agreed upfront",
+                                        "header_size": "h3",
+                                        "_css_classes": "dx-card-title"
+                                    },
+                                    "elements": [],
+                                    "widgetType": "heading"
+                                },
+                                {
+                                    "id": "e08fb1d",
+                                    "elType": "widget",
+                                    "settings": {
+                                        "editor": "<p>One written price. No meters, no surge, no extras.</p>",
+                                        "_css_classes": "dx-card-copy"
+                                    },
+                                    "elements": [],
+                                    "widgetType": "text-editor"
+                                }
+                            ],
+                            "isInner": true
+                        },
+                        {
+                            "id": "4c70136",
+                            "elType": "container",
+                            "settings": {
+                                "content_width": "full",
+                                "html_tag": "article",
+                                "css_classes": "dx-assure",
+                                "flex_direction": "column"
+                            },
+                            "elements": [
+                                {
+                                    "id": "5e947aa",
+                                    "elType": "widget",
+                                    "settings": {
+                                        "title": "04",
+                                        "header_size": "p",
+                                        "_css_classes": "dx-index"
+                                    },
+                                    "elements": [],
+                                    "widgetType": "heading"
+                                },
+                                {
+                                    "id": "442beca",
+                                    "elType": "widget",
+                                    "settings": {
+                                        "title": "Strict privacy",
+                                        "header_size": "h3",
+                                        "_css_classes": "dx-card-title"
+                                    },
+                                    "elements": [],
+                                    "widgetType": "heading"
+                                },
+                                {
+                                    "id": "8679c6a",
+                                    "elType": "widget",
+                                    "settings": {
+                                        "editor": "<p>Names, routes and addresses stay confidential.</p>",
+                                        "_css_classes": "dx-card-copy"
+                                    },
+                                    "elements": [],
+                                    "widgetType": "text-editor"
+                                }
+                            ],
+                            "isInner": true
+                        }
+                    ],
+                    "isInner": true
+                },
+                {
+                    "id": "36a92cb",
+                    "elType": "container",
+                    "settings": {
+                        "content_width": "full",
+                        "html_tag": "section",
+                        "css_classes": "dx-section",
+                        "_element_id": "services",
+                        "_title": "Services",
+                        "flex_direction": "column"
+                    },
+                    "elements": [
+                        {
+                            "id": "39abca5",
+                            "elType": "container",
+                            "settings": {
+                                "content_width": "full",
+                                "html_tag": "div",
+                                "css_classes": "dx-section-heading",
+                                "container_type": "grid",
+                                "grid_columns_grid": {
+                                    "unit": "custom",
+                                    "size": "1.2fr .8fr",
+                                    "sizes": []
+                                },
+                                "grid_columns_grid_tablet": {
+                                    "unit": "custom",
+                                    "size": "1.2fr .8fr",
+                                    "sizes": []
+                                },
+                                "grid_columns_grid_mobile_extra": {
+                                    "unit": "custom",
+                                    "size": "1.2fr .8fr",
+                                    "sizes": []
+                                },
+                                "grid_rows_grid": {
+                                    "unit": "custom",
+                                    "size": "auto",
+                                    "sizes": []
+                                }
+                            },
+                            "elements": [
+                                {
+                                    "id": "2e0cee2",
+                                    "elType": "container",
+                                    "settings": {
+                                        "content_width": "full",
+                                        "html_tag": "div",
+                                        "flex_direction": "column"
+                                    },
+                                    "elements": [
+                                        {
+                                            "id": "e15f1a9",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "title": "Services",
+                                                "header_size": "p",
+                                                "_css_classes": "dx-eyebrow"
+                                            },
+                                            "elements": [],
+                                            "widgetType": "heading"
+                                        },
+                                        {
+                                            "id": "0399d7d",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "title": "Chauffeured four ways",
+                                                "_css_classes": "dx-section-title"
+                                            },
+                                            "elements": [],
+                                            "widgetType": "heading"
+                                        }
+                                    ],
+                                    "isInner": true
+                                },
+                                {
+                                    "id": "b0bf445",
+                                    "elType": "widget",
+                                    "settings": {
+                                        "editor": "<p>Every booking is priced individually. Share the details and receive a single, written fare.</p>",
+                                        "_css_classes": "dx-intro"
+                                    },
+                                    "elements": [],
+                                    "widgetType": "text-editor"
+                                }
+                            ],
+                            "isInner": true
+                        },
+                        {
+                            "id": "a91044e",
+                            "elType": "container",
+                            "settings": {
+                                "content_width": "full",
+                                "html_tag": "div",
+                                "css_classes": "dx-services-grid",
+                                "container_type": "grid",
+                                "grid_columns_grid": {
+                                    "unit": "fr",
+                                    "size": 2,
+                                    "sizes": []
+                                },
+                                "grid_columns_grid_tablet": {
+                                    "unit": "fr",
+                                    "size": 2,
+                                    "sizes": []
+                                },
+                                "grid_columns_grid_mobile_extra": {
+                                    "unit": "fr",
+                                    "size": 2,
+                                    "sizes": []
+                                },
+                                "grid_rows_grid": {
+                                    "unit": "custom",
+                                    "size": "auto",
+                                    "sizes": []
+                                }
+                            },
+                            "elements": [
+                                {
+                                    "id": "24c5915",
+                                    "elType": "container",
+                                    "settings": {
+                                        "content_width": "full",
+                                        "html_tag": "article",
+                                        "css_classes": "dx-service",
+                                        "flex_direction": "column"
+                                    },
+                                    "elements": [
+                                        {
+                                            "id": "8960fbc",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "title": "01 · Arrivals",
+                                                "header_size": "p",
+                                                "_css_classes": "dx-index"
+                                            },
+                                            "elements": [],
+                                            "widgetType": "heading"
+                                        },
+                                        {
+                                            "id": "52cea41",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "title": "Airport transfers",
+                                                "header_size": "h3",
+                                                "_css_classes": "dx-card-title"
+                                            },
+                                            "elements": [],
+                                            "widgetType": "heading"
+                                        },
+                                        {
+                                            "id": "e5f561e",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "editor": "<p>Arrivals tracked in real time, a named greeting in the hall and an hour of waiting included.</p>",
+                                                "_css_classes": "dx-card-copy"
+                                            },
+                                            "elements": [],
+                                            "widgetType": "text-editor"
+                                        }
+                                    ],
+                                    "isInner": true
+                                },
+                                {
+                                    "id": "c88b7ba",
+                                    "elType": "container",
+                                    "settings": {
+                                        "content_width": "full",
+                                        "html_tag": "article",
+                                        "css_classes": "dx-service",
+                                        "flex_direction": "column"
+                                    },
+                                    "elements": [
+                                        {
+                                            "id": "16e8a7c",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "title": "02 · Direct",
+                                                "header_size": "p",
+                                                "_css_classes": "dx-index"
+                                            },
+                                            "elements": [],
+                                            "widgetType": "heading"
+                                        },
+                                        {
+                                            "id": "4af3772",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "title": "Point to point",
+                                                "header_size": "h3",
+                                                "_css_classes": "dx-card-title"
+                                            },
+                                            "elements": [],
+                                            "widgetType": "heading"
+                                        },
+                                        {
+                                            "id": "498ab1b",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "editor": "<p>One fixed fare agreed in advance for any door-to-door journey, across town or across the country.</p>",
+                                                "_css_classes": "dx-card-copy"
+                                            },
+                                            "elements": [],
+                                            "widgetType": "text-editor"
+                                        }
+                                    ],
+                                    "isInner": true
+                                },
+                                {
+                                    "id": "ed4362c",
+                                    "elType": "container",
+                                    "settings": {
+                                        "content_width": "full",
+                                        "html_tag": "article",
+                                        "css_classes": "dx-service",
+                                        "flex_direction": "column"
+                                    },
+                                    "elements": [
+                                        {
+                                            "id": "734f758",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "title": "03 · By the hour",
+                                                "header_size": "p",
+                                                "_css_classes": "dx-index"
+                                            },
+                                            "elements": [],
+                                            "widgetType": "heading"
+                                        },
+                                        {
+                                            "id": "5992df3",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "title": "Chauffeur on call",
+                                                "header_size": "h3",
+                                                "_css_classes": "dx-card-title"
+                                            },
+                                            "elements": [],
+                                            "widgetType": "heading"
+                                        },
+                                        {
+                                            "id": "ef063ac",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "editor": "<p>Your driver stays close by for meetings, viewings and every stop that follows.</p>",
+                                                "_css_classes": "dx-card-copy"
+                                            },
+                                            "elements": [],
+                                            "widgetType": "text-editor"
+                                        }
+                                    ],
+                                    "isInner": true
+                                },
+                                {
+                                    "id": "f0addd8",
+                                    "elType": "container",
+                                    "settings": {
+                                        "content_width": "full",
+                                        "html_tag": "article",
+                                        "css_classes": "dx-service",
+                                        "flex_direction": "column"
+                                    },
+                                    "elements": [
+                                        {
+                                            "id": "44a2afd",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "title": "04 · Occasions",
+                                                "header_size": "p",
+                                                "_css_classes": "dx-index"
+                                            },
+                                            "elements": [],
+                                            "widgetType": "heading"
+                                        },
+                                        {
+                                            "id": "4b2aa0f",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "title": "Events & long distance",
+                                                "header_size": "h3",
+                                                "_css_classes": "dx-card-title"
+                                            },
+                                            "elements": [],
+                                            "widgetType": "heading"
+                                        },
+                                        {
+                                            "id": "33dc440",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "editor": "<p>Weddings, galas and extended road trips, planned with you and priced in writing.</p>",
+                                                "_css_classes": "dx-card-copy"
+                                            },
+                                            "elements": [],
+                                            "widgetType": "text-editor"
+                                        }
+                                    ],
+                                    "isInner": true
+                                }
+                            ],
+                            "isInner": true
+                        }
+                    ],
+                    "isInner": true
+                },
+                {
+                    "id": "5bca2c1",
+                    "elType": "container",
+                    "settings": {
+                        "content_width": "full",
+                        "html_tag": "section",
+                        "css_classes": "dx-section dx-section--alt",
+                        "_element_id": "fleet",
+                        "_title": "Fleet",
+                        "flex_direction": "column"
+                    },
+                    "elements": [
+                        {
+                            "id": "288989b",
+                            "elType": "widget",
+                            "settings": {
+                                "title": "The fleet",
+                                "header_size": "p",
+                                "_css_classes": "dx-eyebrow"
+                            },
+                            "elements": [],
+                            "widgetType": "heading"
+                        },
+                        {
+                            "id": "26a88b6",
+                            "elType": "widget",
+                            "settings": {
+                                "title": "Three classes, one standard of care",
+                                "_css_classes": "dx-section-title"
+                            },
+                            "elements": [],
+                            "widgetType": "heading"
+                        },
+                        {
+                            "id": "9dee845",
+                            "elType": "container",
+                            "settings": {
+                                "content_width": "full",
+                                "html_tag": "div",
+                                "css_classes": "dx-fleet-grid",
+                                "container_type": "grid",
+                                "grid_columns_grid_tablet": {
+                                    "unit": "fr",
+                                    "size": 3,
+                                    "sizes": []
+                                },
+                                "grid_columns_grid_mobile_extra": {
+                                    "unit": "fr",
+                                    "size": 1,
+                                    "sizes": []
+                                },
+                                "grid_rows_grid": {
+                                    "unit": "custom",
+                                    "size": "auto",
+                                    "sizes": []
+                                }
+                            },
+                            "elements": [
+                                {
+                                    "id": "3d96ab6",
+                                    "elType": "container",
+                                    "settings": {
+                                        "content_width": "full",
+                                        "html_tag": "article",
+                                        "css_classes": "dx-fleet-card",
+                                        "flex_direction": "column"
+                                    },
+                                    "elements": [
+                                        {
+                                            "id": "f8a37d2",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "image": {
+                                                    "id": "{{media:fleet-business:id}}",
+                                                    "url": "{{media:fleet-business:url}}"
+                                                },
+                                                "_css_classes": "dx-fleet-media"
+                                            },
+                                            "elements": [],
+                                            "widgetType": "image"
+                                        },
+                                        {
+                                            "id": "00db068",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "title": "Business Class",
+                                                "header_size": "h3",
+                                                "_css_classes": "dx-card-title"
+                                            },
+                                            "elements": [],
+                                            "widgetType": "heading"
+                                        },
+                                        {
+                                            "id": "bcd51ec",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "editor": "<p>An executive saloon with a quiet cabin, Wi-Fi, device charging and bottled water on board.</p>",
+                                                "_css_classes": "dx-card-copy"
+                                            },
+                                            "elements": [],
+                                            "widgetType": "text-editor"
+                                        },
+                                        {
+                                            "id": "99bed85",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "text": "Quote this car",
+                                                "link": {
+                                                    "url": "#quote",
+                                                    "is_external": "",
+                                                    "nofollow": "",
+                                                    "custom_attributes": "data-vehicle|Business Class,aria-label|Quote this car: Business Class"
+                                                },
+                                                "_css_classes": "dx-btn dx-btn--primary dx-btn--arrow dx-fleet-button"
+                                            },
+                                            "elements": [],
+                                            "widgetType": "button"
+                                        }
+                                    ],
+                                    "isInner": true
+                                },
+                                {
+                                    "id": "8b888ac",
+                                    "elType": "container",
+                                    "settings": {
+                                        "content_width": "full",
+                                        "html_tag": "article",
+                                        "css_classes": "dx-fleet-card",
+                                        "flex_direction": "column"
+                                    },
+                                    "elements": [
+                                        {
+                                            "id": "65affc8",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "image": {
+                                                    "id": "{{media:fleet-first:id}}",
+                                                    "url": "{{media:fleet-first:url}}"
+                                                },
+                                                "_css_classes": "dx-fleet-media"
+                                            },
+                                            "elements": [],
+                                            "widgetType": "image"
+                                        },
+                                        {
+                                            "id": "7b52289",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "title": "First Class",
+                                                "header_size": "h3",
+                                                "_css_classes": "dx-card-title"
+                                            },
+                                            "elements": [],
+                                            "widgetType": "heading"
+                                        },
+                                        {
+                                            "id": "2b82279",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "editor": "<p>Long-wheelbase comfort with reclining rear seats, privacy glass and individual climate control.</p>",
+                                                "_css_classes": "dx-card-copy"
+                                            },
+                                            "elements": [],
+                                            "widgetType": "text-editor"
+                                        },
+                                        {
+                                            "id": "38982aa",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "text": "Quote this car",
+                                                "link": {
+                                                    "url": "#quote",
+                                                    "is_external": "",
+                                                    "nofollow": "",
+                                                    "custom_attributes": "data-vehicle|First Class,aria-label|Quote this car: First Class"
+                                                },
+                                                "_css_classes": "dx-btn dx-btn--primary dx-btn--arrow dx-fleet-button"
+                                            },
+                                            "elements": [],
+                                            "widgetType": "button"
+                                        }
+                                    ],
+                                    "isInner": true
+                                },
+                                {
+                                    "id": "900677b",
+                                    "elType": "container",
+                                    "settings": {
+                                        "content_width": "full",
+                                        "html_tag": "article",
+                                        "css_classes": "dx-fleet-card",
+                                        "flex_direction": "column"
+                                    },
+                                    "elements": [
+                                        {
+                                            "id": "25a30ea",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "image": {
+                                                    "id": "{{media:fleet-van:id}}",
+                                                    "url": "{{media:fleet-van:url}}"
+                                                },
+                                                "_css_classes": "dx-fleet-media"
+                                            },
+                                            "elements": [],
+                                            "widgetType": "image"
+                                        },
+                                        {
+                                            "id": "8594ea2",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "title": "Business Van",
+                                                "header_size": "h3",
+                                                "_css_classes": "dx-card-title"
+                                            },
+                                            "elements": [],
+                                            "widgetType": "heading"
+                                        },
+                                        {
+                                            "id": "2091a05",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "editor": "<p>Room for groups, families and luggage, with facing seats, Wi-Fi and USB-C at every row.</p>",
+                                                "_css_classes": "dx-card-copy"
+                                            },
+                                            "elements": [],
+                                            "widgetType": "text-editor"
+                                        },
+                                        {
+                                            "id": "5e1ab9a",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "text": "Quote this car",
+                                                "link": {
+                                                    "url": "#quote",
+                                                    "is_external": "",
+                                                    "nofollow": "",
+                                                    "custom_attributes": "data-vehicle|Business Van,aria-label|Quote this car: Business Van"
+                                                },
+                                                "_css_classes": "dx-btn dx-btn--primary dx-btn--arrow dx-fleet-button"
+                                            },
+                                            "elements": [],
+                                            "widgetType": "button"
+                                        }
+                                    ],
+                                    "isInner": true
+                                }
+                            ],
+                            "isInner": true
+                        }
+                    ],
+                    "isInner": true
+                },
+                {
+                    "id": "b9a17c7",
+                    "elType": "container",
+                    "settings": {
+                        "content_width": "full",
+                        "html_tag": "section",
+                        "css_classes": "dx-section dx-cities",
+                        "_element_id": "cities",
+                        "_title": "Cities",
+                        "flex_direction": "column"
+                    },
+                    "elements": [
+                        {
+                            "id": "5d36336",
+                            "elType": "container",
+                            "settings": {
+                                "content_width": "full",
+                                "html_tag": "div",
+                                "css_classes": "dx-cities-layout",
+                                "container_type": "grid",
+                                "grid_columns_grid": {
+                                    "unit": "custom",
+                                    "size": ".8fr 1.2fr",
+                                    "sizes": []
+                                },
+                                "grid_columns_grid_tablet": {
+                                    "unit": "fr",
+                                    "size": 1,
+                                    "sizes": []
+                                },
+                                "grid_columns_grid_mobile_extra": {
+                                    "unit": "fr",
+                                    "size": 1,
+                                    "sizes": []
+                                },
+                                "grid_rows_grid": {
+                                    "unit": "custom",
+                                    "size": "auto",
+                                    "sizes": []
+                                }
+                            },
+                            "elements": [
+                                {
+                                    "id": "cbbef6b",
+                                    "elType": "container",
+                                    "settings": {
+                                        "content_width": "full",
+                                        "html_tag": "div",
+                                        "flex_direction": "column"
+                                    },
+                                    "elements": [
+                                        {
+                                            "id": "84b57df",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "title": "Where we operate",
+                                                "header_size": "p",
+                                                "_css_classes": "dx-eyebrow"
+                                            },
+                                            "elements": [],
+                                            "widgetType": "heading"
+                                        },
+                                        {
+                                            "id": "246723b",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "title": "Four cities.<br>One standard.",
+                                                "_css_classes": "dx-section-title"
+                                            },
+                                            "elements": [],
+                                            "widgetType": "heading"
+                                        },
+                                        {
+                                            "id": "1d4e60f",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "editor": "<p>The same trained drivers, well-kept cars and fixed-fare approach in every city we serve.</p>",
+                                                "_css_classes": "dx-intro"
+                                            },
+                                            "elements": [],
+                                            "widgetType": "text-editor"
+                                        }
+                                    ],
+                                    "isInner": true
+                                },
+                                {
+                                    "id": "35138fd",
+                                    "elType": "container",
+                                    "settings": {
+                                        "content_width": "full",
+                                        "html_tag": "div",
+                                        "css_classes": "dx-city-grid",
+                                        "container_type": "grid",
+                                        "grid_columns_grid": {
+                                            "unit": "fr",
+                                            "size": 2,
+                                            "sizes": []
+                                        },
+                                        "grid_columns_grid_tablet": {
+                                            "unit": "fr",
+                                            "size": 2,
+                                            "sizes": []
+                                        },
+                                        "grid_columns_grid_mobile_extra": {
+                                            "unit": "fr",
+                                            "size": 2,
+                                            "sizes": []
+                                        },
+                                        "grid_columns_grid_mobile": {
+                                            "unit": "fr",
+                                            "size": 2,
+                                            "sizes": []
+                                        },
+                                        "grid_rows_grid": {
+                                            "unit": "custom",
+                                            "size": "auto",
+                                            "sizes": []
+                                        }
+                                    },
+                                    "elements": [
+                                        {
+                                            "id": "44b8aa7",
+                                            "elType": "container",
+                                            "settings": {
+                                                "content_width": "full",
+                                                "html_tag": "article",
+                                                "css_classes": "dx-city-cell",
+                                                "flex_direction": "column"
+                                            },
+                                            "elements": [
+                                                {
+                                                    "id": "8f8f452",
+                                                    "elType": "widget",
+                                                    "settings": {
+                                                        "title": "01",
+                                                        "header_size": "p",
+                                                        "_css_classes": "dx-index"
+                                                    },
+                                                    "elements": [],
+                                                    "widgetType": "heading"
+                                                },
+                                                {
+                                                    "id": "f4d0ba1",
+                                                    "elType": "widget",
+                                                    "settings": {
+                                                        "title": "London",
+                                                        "header_size": "h3",
+                                                        "_css_classes": "dx-card-title"
+                                                    },
+                                                    "elements": [],
+                                                    "widgetType": "heading"
+                                                },
+                                                {
+                                                    "id": "578a1e4",
+                                                    "elType": "widget",
+                                                    "settings": {
+                                                        "title": "Heathrow · City · Mayfair",
+                                                        "header_size": "p",
+                                                        "_css_classes": "dx-caption"
+                                                    },
+                                                    "elements": [],
+                                                    "widgetType": "heading"
+                                                }
+                                            ],
+                                            "isInner": true
+                                        },
+                                        {
+                                            "id": "673e167",
+                                            "elType": "container",
+                                            "settings": {
+                                                "content_width": "full",
+                                                "html_tag": "article",
+                                                "css_classes": "dx-city-cell",
+                                                "flex_direction": "column"
+                                            },
+                                            "elements": [
+                                                {
+                                                    "id": "3ed68db",
+                                                    "elType": "widget",
+                                                    "settings": {
+                                                        "title": "02",
+                                                        "header_size": "p",
+                                                        "_css_classes": "dx-index"
+                                                    },
+                                                    "elements": [],
+                                                    "widgetType": "heading"
+                                                },
+                                                {
+                                                    "id": "f037b01",
+                                                    "elType": "widget",
+                                                    "settings": {
+                                                        "title": "Paris",
+                                                        "header_size": "h3",
+                                                        "_css_classes": "dx-card-title"
+                                                    },
+                                                    "elements": [],
+                                                    "widgetType": "heading"
+                                                },
+                                                {
+                                                    "id": "405d6ca",
+                                                    "elType": "widget",
+                                                    "settings": {
+                                                        "title": "CDG · Orly · Rive Gauche",
+                                                        "header_size": "p",
+                                                        "_css_classes": "dx-caption"
+                                                    },
+                                                    "elements": [],
+                                                    "widgetType": "heading"
+                                                }
+                                            ],
+                                            "isInner": true
+                                        },
+                                        {
+                                            "id": "00b1307",
+                                            "elType": "container",
+                                            "settings": {
+                                                "content_width": "full",
+                                                "html_tag": "article",
+                                                "css_classes": "dx-city-cell",
+                                                "flex_direction": "column"
+                                            },
+                                            "elements": [
+                                                {
+                                                    "id": "fc6a7e9",
+                                                    "elType": "widget",
+                                                    "settings": {
+                                                        "title": "03",
+                                                        "header_size": "p",
+                                                        "_css_classes": "dx-index"
+                                                    },
+                                                    "elements": [],
+                                                    "widgetType": "heading"
+                                                },
+                                                {
+                                                    "id": "ff72f68",
+                                                    "elType": "widget",
+                                                    "settings": {
+                                                        "title": "Bulgaria",
+                                                        "header_size": "h3",
+                                                        "_css_classes": "dx-card-title"
+                                                    },
+                                                    "elements": [],
+                                                    "widgetType": "heading"
+                                                },
+                                                {
+                                                    "id": "5399476",
+                                                    "elType": "widget",
+                                                    "settings": {
+                                                        "title": "Sofia · Varna · Bansko",
+                                                        "header_size": "p",
+                                                        "_css_classes": "dx-caption"
+                                                    },
+                                                    "elements": [],
+                                                    "widgetType": "heading"
+                                                }
+                                            ],
+                                            "isInner": true
+                                        },
+                                        {
+                                            "id": "2740c22",
+                                            "elType": "container",
+                                            "settings": {
+                                                "content_width": "full",
+                                                "html_tag": "article",
+                                                "css_classes": "dx-city-cell",
+                                                "flex_direction": "column"
+                                            },
+                                            "elements": [
+                                                {
+                                                    "id": "7f38a60",
+                                                    "elType": "widget",
+                                                    "settings": {
+                                                        "title": "04",
+                                                        "header_size": "p",
+                                                        "_css_classes": "dx-index"
+                                                    },
+                                                    "elements": [],
+                                                    "widgetType": "heading"
+                                                },
+                                                {
+                                                    "id": "6cfb61a",
+                                                    "elType": "widget",
+                                                    "settings": {
+                                                        "title": "Dubai",
+                                                        "header_size": "h3",
+                                                        "_css_classes": "dx-card-title"
+                                                    },
+                                                    "elements": [],
+                                                    "widgetType": "heading"
+                                                },
+                                                {
+                                                    "id": "bfae451",
+                                                    "elType": "widget",
+                                                    "settings": {
+                                                        "title": "DXB · Marina · Downtown",
+                                                        "header_size": "p",
+                                                        "_css_classes": "dx-caption"
+                                                    },
+                                                    "elements": [],
+                                                    "widgetType": "heading"
+                                                }
+                                            ],
+                                            "isInner": true
+                                        }
+                                    ],
+                                    "isInner": true
+                                }
+                            ],
+                            "isInner": true
+                        }
+                    ],
+                    "isInner": true
+                },
+                {
+                    "id": "00e0494",
+                    "elType": "container",
+                    "settings": {
+                        "content_width": "full",
+                        "html_tag": "section",
+                        "css_classes": "dx-section dx-section--alt dx-process",
+                        "_element_id": "process",
+                        "_title": "Process",
+                        "flex_direction": "column"
+                    },
+                    "elements": [
+                        {
+                            "id": "718d161",
+                            "elType": "widget",
+                            "settings": {
+                                "title": "How it works",
+                                "header_size": "p",
+                                "_css_classes": "dx-eyebrow"
+                            },
+                            "elements": [],
+                            "widgetType": "heading"
+                        },
+                        {
+                            "id": "7aa7583",
+                            "elType": "widget",
+                            "settings": {
+                                "title": "Three steps, nothing more",
+                                "_css_classes": "dx-section-title"
+                            },
+                            "elements": [],
+                            "widgetType": "heading"
+                        },
+                        {
+                            "id": "a798e27",
+                            "elType": "container",
+                            "settings": {
+                                "content_width": "full",
+                                "html_tag": "div",
+                                "css_classes": "dx-process-grid",
+                                "container_type": "grid",
+                                "grid_columns_grid_tablet": {
+                                    "unit": "fr",
+                                    "size": 3,
+                                    "sizes": []
+                                },
+                                "grid_columns_grid_mobile_extra": {
+                                    "unit": "fr",
+                                    "size": 1,
+                                    "sizes": []
+                                },
+                                "grid_rows_grid": {
+                                    "unit": "custom",
+                                    "size": "auto",
+                                    "sizes": []
+                                }
+                            },
+                            "elements": [
+                                {
+                                    "id": "c27f9f5",
+                                    "elType": "container",
+                                    "settings": {
+                                        "content_width": "full",
+                                        "html_tag": "article",
+                                        "css_classes": "dx-process-step",
+                                        "flex_direction": "column"
+                                    },
+                                    "elements": [
+                                        {
+                                            "id": "83a3bb3",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "title": "01",
+                                                "header_size": "p",
+                                                "_css_classes": "dx-process-number"
+                                            },
+                                            "elements": [],
+                                            "widgetType": "heading"
+                                        },
+                                        {
+                                            "id": "91bd9b0",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "title": "Share the journey",
+                                                "header_size": "h3",
+                                                "_css_classes": "dx-card-title"
+                                            },
+                                            "elements": [],
+                                            "widgetType": "heading"
+                                        },
+                                        {
+                                            "id": "318aa9d",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "editor": "<p>City, service, date and stops — the quote form takes about a minute.</p>",
+                                                "_css_classes": "dx-card-copy"
+                                            },
+                                            "elements": [],
+                                            "widgetType": "text-editor"
+                                        }
+                                    ],
+                                    "isInner": true
+                                },
+                                {
+                                    "id": "ef4b8af",
+                                    "elType": "container",
+                                    "settings": {
+                                        "content_width": "full",
+                                        "html_tag": "article",
+                                        "css_classes": "dx-process-step",
+                                        "flex_direction": "column"
+                                    },
+                                    "elements": [
+                                        {
+                                            "id": "7aa71b6",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "title": "02",
+                                                "header_size": "p",
+                                                "_css_classes": "dx-process-number"
+                                            },
+                                            "elements": [],
+                                            "widgetType": "heading"
+                                        },
+                                        {
+                                            "id": "610fa98",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "title": "Receive your fare",
+                                                "header_size": "h3",
+                                                "_css_classes": "dx-card-title"
+                                            },
+                                            "elements": [],
+                                            "widgetType": "heading"
+                                        },
+                                        {
+                                            "id": "ef1a34a",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "editor": "<p>A member of our team prices it and replies with one all-inclusive figure.</p>",
+                                                "_css_classes": "dx-card-copy"
+                                            },
+                                            "elements": [],
+                                            "widgetType": "text-editor"
+                                        }
+                                    ],
+                                    "isInner": true
+                                },
+                                {
+                                    "id": "dd49d4c",
+                                    "elType": "container",
+                                    "settings": {
+                                        "content_width": "full",
+                                        "html_tag": "article",
+                                        "css_classes": "dx-process-step",
+                                        "flex_direction": "column"
+                                    },
+                                    "elements": [
+                                        {
+                                            "id": "2755334",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "title": "03",
+                                                "header_size": "p",
+                                                "_css_classes": "dx-process-number"
+                                            },
+                                            "elements": [],
+                                            "widgetType": "heading"
+                                        },
+                                        {
+                                            "id": "211566e",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "title": "Take your seat",
+                                                "header_size": "h3",
+                                                "_css_classes": "dx-card-title"
+                                            },
+                                            "elements": [],
+                                            "widgetType": "heading"
+                                        },
+                                        {
+                                            "id": "2aa0ae8",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "editor": "<p>Your driver arrives early, waits patiently and handles the rest.</p>",
+                                                "_css_classes": "dx-card-copy"
+                                            },
+                                            "elements": [],
+                                            "widgetType": "text-editor"
+                                        }
+                                    ],
+                                    "isInner": true
+                                }
+                            ],
+                            "isInner": true
+                        }
+                    ],
+                    "isInner": true
+                },
+                {
+                    "id": "9b6a3fb",
+                    "elType": "container",
+                    "settings": {
+                        "content_width": "full",
+                        "html_tag": "section",
+                        "css_classes": "dx-section dx-quote-band",
+                        "_element_id": "quote",
+                        "_title": "Quote",
+                        "flex_direction": "column"
+                    },
+                    "elements": [
+                        {
+                            "id": "ec818fe",
+                            "elType": "widget",
+                            "settings": {
+                                "shortcode": "[driveo_orbit]",
+                                "_css_classes": "dx-orbit-widget"
+                            },
+                            "elements": [],
+                            "widgetType": "shortcode"
+                        },
+                        {
+                            "id": "c4b71bb",
+                            "elType": "container",
+                            "settings": {
+                                "content_width": "full",
+                                "html_tag": "div",
+                                "css_classes": "dx-quote-layout",
+                                "container_type": "grid",
+                                "grid_columns_grid": {
+                                    "unit": "custom",
+                                    "size": ".78fr 1.22fr",
+                                    "sizes": []
+                                },
+                                "grid_columns_grid_tablet": {
+                                    "unit": "fr",
+                                    "size": 1,
+                                    "sizes": []
+                                },
+                                "grid_columns_grid_mobile_extra": {
+                                    "unit": "fr",
+                                    "size": 1,
+                                    "sizes": []
+                                },
+                                "grid_rows_grid": {
+                                    "unit": "custom",
+                                    "size": "auto",
+                                    "sizes": []
+                                }
+                            },
+                            "elements": [
+                                {
+                                    "id": "23dc9d2",
+                                    "elType": "container",
+                                    "settings": {
+                                        "content_width": "full",
+                                        "html_tag": "div",
+                                        "css_classes": "dx-quote-intro",
+                                        "flex_direction": "column"
+                                    },
+                                    "elements": [
+                                        {
+                                            "id": "3a92d70",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "title": "Private enquiry",
+                                                "header_size": "p",
+                                                "_css_classes": "dx-eyebrow"
+                                            },
+                                            "elements": [],
+                                            "widgetType": "heading"
+                                        },
+                                        {
+                                            "id": "fe37607",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "title": "Where shall we collect you?",
+                                                "_css_classes": "dx-quote-title"
+                                            },
+                                            "elements": [],
+                                            "widgetType": "heading"
+                                        },
+                                        {
+                                            "id": "6444121",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "editor": "<p>Tell us the essentials. Your request is stored securely and reviewed by a member of our team.</p>",
+                                                "_css_classes": "dx-quote-copy"
+                                            },
+                                            "elements": [],
+                                            "widgetType": "text-editor"
+                                        },
+                                        {
+                                            "id": "3b81246",
+                                            "elType": "container",
+                                            "settings": {
+                                                "content_width": "full",
+                                                "html_tag": "div",
+                                                "css_classes": "dx-seal",
+                                                "flex_direction": "row"
+                                            },
+                                            "elements": [
+                                                {
+                                                    "id": "a8d6c53",
+                                                    "elType": "widget",
+                                                    "settings": {
+                                                        "_css_classes": "dx-logo dx-logo--seal"
+                                                    },
+                                                    "elements": [],
+                                                    "widgetType": "driveo-logo"
+                                                },
+                                                {
+                                                    "id": "e32bd79",
+                                                    "elType": "widget",
+                                                    "settings": {
+                                                        "editor": "<p>Fixed fare<br>Personal reply</p>",
+                                                        "_css_classes": "dx-seal-text"
+                                                    },
+                                                    "elements": [],
+                                                    "widgetType": "text-editor"
+                                                }
+                                            ],
+                                            "isInner": true
+                                        }
+                                    ],
+                                    "isInner": true
+                                },
+                                {
+                                    "id": "de69cdc",
+                                    "elType": "widget",
+                                    "settings": {
+                                        "shortcode": "[contact-form-7 id=\"{{cf7:quote}}\" title=\"Quote request\" html_class=\"dx-quote-form\"]",
+                                        "_css_classes": "dx-quote-card"
+                                    },
+                                    "elements": [],
+                                    "widgetType": "shortcode"
+                                }
+                            ],
+                            "isInner": true
+                        }
+                    ],
+                    "isInner": true
+                },
+                {
+                    "id": "2635028",
+                    "elType": "container",
+                    "settings": {
+                        "content_width": "full",
+                        "html_tag": "section",
+                        "css_classes": "dx-section dx-testimonial",
+                        "_element_id": "testimonial",
+                        "_title": "Testimonial",
+                        "flex_direction": "column"
+                    },
+                    "elements": [
+                        {
+                            "id": "7dede43",
+                            "elType": "widget",
+                            "settings": {
+                                "title": "Client note",
+                                "_css_classes": "dx-eyebrow"
+                            },
+                            "elements": [],
+                            "widgetType": "heading"
+                        },
+                        {
+                            "id": "fd44b54",
+                            "elType": "widget",
+                            "settings": {
+                                "editor": "<figure><blockquote><p>“Four cities in one week, and every car was waiting before we landed. It is the one part of the trip I no longer double-check.”</p></blockquote><figcaption class=\"dx-testimonial-attribution\">Placeholder — replace with a verified client quote</figcaption></figure>",
+                                "_css_classes": "dx-testimonial-quote"
+                            },
+                            "elements": [],
+                            "widgetType": "text-editor"
+                        }
+                    ],
+                    "isInner": true
+                }
+            ],
+            "isInner": false
+        },
+        {
+            "id": "4a4f1a7",
+            "elType": "container",
+            "settings": {
+                "content_width": "full",
+                "html_tag": "footer",
+                "css_classes": "dx-footer",
+                "_element_id": "contact",
+                "_title": "Footer",
+                "flex_direction": "column"
+            },
+            "elements": [
+                {
+                    "id": "bd0f442",
+                    "elType": "container",
+                    "settings": {
+                        "content_width": "full",
+                        "html_tag": "div",
+                        "css_classes": "dx-footer-grid",
+                        "container_type": "grid",
+                        "grid_columns_grid": {
+                            "unit": "custom",
+                            "size": "1.5fr 1fr 1fr",
+                            "sizes": []
+                        },
+                        "grid_columns_grid_tablet": {
+                            "unit": "custom",
+                            "size": "1.5fr 1fr 1fr",
+                            "sizes": []
+                        },
+                        "grid_columns_grid_mobile_extra": {
+                            "unit": "custom",
+                            "size": "1.5fr 1fr 1fr",
+                            "sizes": []
+                        },
+                        "grid_rows_grid": {
+                            "unit": "custom",
+                            "size": "auto",
+                            "sizes": []
+                        }
+                    },
+                    "elements": [
+                        {
+                            "id": "4c05416",
+                            "elType": "container",
+                            "settings": {
+                                "content_width": "full",
+                                "html_tag": "div",
+                                "flex_direction": "column"
+                            },
+                            "elements": [
+                                {
+                                    "id": "4880b15",
+                                    "elType": "container",
+                                    "settings": {
+                                        "content_width": "full",
+                                        "html_tag": "div",
+                                        "css_classes": "dx-brand dx-brand--footer",
+                                        "flex_direction": "row"
+                                    },
+                                    "elements": [
+                                        {
+                                            "id": "2d82c50",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "link": {
+                                                    "url": "#top",
+                                                    "is_external": "",
+                                                    "nofollow": ""
+                                                },
+                                                "_css_classes": "dx-logo "
+                                            },
+                                            "elements": [],
+                                            "widgetType": "driveo-logo"
+                                        },
+                                        {
+                                            "id": "40c3e6d",
+                                            "elType": "widget",
+                                            "settings": {
+                                                "title": "Atelier Chauffeurs",
+                                                "header_size": "div",
+                                                "link": {
+                                                    "url": "#top",
+                                                    "is_external": "",
+                                                    "nofollow": ""
+                                                },
+                                                "_css_classes": "dx-brand-name"
+                                            },
+                                            "elements": [],
+                                            "widgetType": "heading"
+                                        }
+                                    ],
+                                    "isInner": true
+                                },
+                                {
+                                    "id": "3ed92d7",
+                                    "elType": "widget",
+                                    "settings": {
+                                        "title": "Arrive at ease.",
+                                        "header_size": "p",
+                                        "_css_classes": "dx-footer-tagline"
+                                    },
+                                    "elements": [],
+                                    "widgetType": "heading"
+                                },
+                                {
+                                    "id": "f375c78",
+                                    "elType": "widget",
+                                    "settings": {
+                                        "text": "Request a quote",
+                                        "link": {
+                                            "url": "#quote",
+                                            "is_external": "",
+                                            "nofollow": "",
+                                            "custom_attributes": ""
+                                        },
+                                        "_css_classes": "dx-btn dx-btn--primary dx-btn--arrow-ne"
+                                    },
+                                    "elements": [],
+                                    "widgetType": "button"
+                                }
+                            ],
+                            "isInner": true
+                        },
+                        {
+                            "id": "a2b1bb7",
+                            "elType": "container",
+                            "settings": {
+                                "content_width": "full",
+                                "html_tag": "div",
+                                "flex_direction": "column"
+                            },
+                            "elements": [
+                                {
+                                    "id": "93e1d3b",
+                                    "elType": "widget",
+                                    "settings": {
+                                        "title": "Contact",
+                                        "_css_classes": "dx-footer-label"
+                                    },
+                                    "elements": [],
+                                    "widgetType": "heading"
+                                },
+                                {
+                                    "id": "bcf94ab",
+                                    "elType": "widget",
+                                    "settings": {
+                                        "editor": "<p><a href=\"tel:+442079460000\">+44 20 7946 0000</a><br><a href=\"mailto:hello@example.com\">hello@example.com</a></p><p>Private bookings and enquiries</p>",
+                                        "_css_classes": "dx-footer-contact"
+                                    },
+                                    "elements": [],
+                                    "widgetType": "text-editor"
+                                },
+                                {
+                                    "id": "ce17e27",
+                                    "elType": "widget",
+                                    "settings": {
+                                        "items": [
+                                            {
+                                                "_id": "8d79762",
+                                                "url": {
+                                                    "url": "https://wa.me/447700900000",
+                                                    "is_external": "on",
+                                                    "nofollow": ""
+                                                },
+                                                "label": "WhatsApp (opens in a new tab)"
+                                            },
+                                            {
+                                                "_id": "7cd7419",
+                                                "network": "linkedin",
+                                                "url": {
+                                                    "url": "https://www.linkedin.com/",
+                                                    "is_external": "on",
+                                                    "nofollow": ""
+                                                },
+                                                "label": "LinkedIn (opens in a new tab)"
+                                            },
+                                            {
+                                                "_id": "c4b9d30",
+                                                "network": "instagram",
+                                                "url": {
+                                                    "url": "https://www.instagram.com/",
+                                                    "is_external": "on",
+                                                    "nofollow": ""
+                                                },
+                                                "label": "Instagram (opens in a new tab)"
+                                            },
+                                            {
+                                                "_id": "ae97291",
+                                                "network": "facebook",
+                                                "url": {
+                                                    "url": "https://www.facebook.com/",
+                                                    "is_external": "on",
+                                                    "nofollow": ""
+                                                },
+                                                "label": "Facebook (opens in a new tab)"
+                                            }
+                                        ],
+                                        "list_label": "Social media",
+                                        "_css_classes": "dx-footer-social"
+                                    },
+                                    "elements": [],
+                                    "widgetType": "driveo-social-links"
+                                },
+                                {
+                                    "id": "2f54ea8",
+                                    "elType": "widget",
+                                    "settings": {
+                                        "title": "Install as an app on your device",
+                                        "header_size": "p",
+                                        "_css_classes": "dx-footer-label dx-install-title"
+                                    },
+                                    "elements": [],
+                                    "widgetType": "heading"
+                                },
+                                {
+                                    "id": "43bb011",
+                                    "elType": "widget",
+                                    "settings": {
+                                        "shortcode": "[driveo_install label=\"Install app\"]"
+                                    },
+                                    "elements": [],
+                                    "widgetType": "shortcode"
+                                }
+                            ],
+                            "isInner": true
+                        },
+                        {
+                            "id": "d870e54",
+                            "elType": "container",
+                            "settings": {
+                                "content_width": "full",
+                                "html_tag": "div",
+                                "flex_direction": "column"
+                            },
+                            "elements": [
+                                {
+                                    "id": "be3c5b8",
+                                    "elType": "widget",
+                                    "settings": {
+                                        "title": "Cities",
+                                        "_css_classes": "dx-footer-label"
+                                    },
+                                    "elements": [],
+                                    "widgetType": "heading"
+                                },
+                                {
+                                    "id": "df158fa",
+                                    "elType": "widget",
+                                    "settings": {
+                                        "editor": "<ul><li>London</li><li>Paris</li><li>Bulgaria</li><li>Dubai</li></ul>",
+                                        "_css_classes": "dx-footer-cities"
+                                    },
+                                    "elements": [],
+                                    "widgetType": "text-editor"
+                                }
+                            ],
+                            "isInner": true
+                        }
+                    ],
+                    "isInner": true
+                },
+                {
+                    "id": "900fe48",
+                    "elType": "container",
+                    "settings": {
+                        "content_width": "full",
+                        "html_tag": "div",
+                        "css_classes": "dx-footer-bar",
+                        "flex_direction": "row"
+                    },
+                    "elements": [
+                        {
+                            "id": "2b59d2b",
+                            "elType": "widget",
+                            "settings": {
+                                "editor": "<p>© [driveo_year] Atelier Chauffeurs Ltd</p>"
+                            },
+                            "elements": [],
+                            "widgetType": "text-editor"
+                        },
+                        {
+                            "id": "7831644",
+                            "elType": "widget",
+                            "settings": {
+                                "editor": "<p>Discreet · Punctual · Composed</p>"
+                            },
+                            "elements": [],
+                            "widgetType": "text-editor"
+                        }
+                    ],
+                    "isInner": true
+                }
+            ],
+            "isInner": false
+        }
+    ]
+}

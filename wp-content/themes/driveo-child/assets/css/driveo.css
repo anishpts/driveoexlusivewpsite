@@ -1,0 +1,2065 @@
+/* ==========================================================================
+   Driveo one-page design system
+   --------------------------------------------------------------------------
+   1. Tokens          5. Components (sections, top to bottom)
+   2. Fonts           6. Utilities
+   3. Reset / base    7. Responsive
+   4. Typography      8. Accessibility & reduced motion
+
+   Elementor holds structure (containers, grid columns per breakpoint, content).
+   This file holds the visual language. Hooks are the `dx-*` classes set under
+   Advanced → CSS Classes on each Elementor element. `.e-con.dx-*` selectors
+   override Elementor's container variables (--padding-*, --gap, --position…).
+   ========================================================================== */
+
+/* 1. Tokens ================================================================ */
+
+:root {
+	/* Palette */
+	--dx-bg: #0d0907;
+	--dx-fg: #efe7da;
+	--dx-surface: #18130f;
+	--dx-muted: #221b17;
+	--dx-muted-fg: #a49a8d;
+	--dx-copper: #dea074;
+	--dx-copper-hover: #e8b58f;
+	--dx-copper-deep: #8f5a34; /* copper for text on the cream band (4.6:1) */
+	--dx-danger: #9f1d15;
+
+	/* Alpha steps used by the design (from the audit) */
+	--dx-line: rgb(239 231 218 / .12);
+	--dx-fg-07: rgb(239 231 218 / .07);
+	--dx-fg-13: rgb(239 231 218 / .13);
+	--dx-fg-25: rgb(239 231 218 / .25);
+	--dx-fg-28: rgb(239 231 218 / .28);
+	--dx-fg-45: rgb(239 231 218 / .45);
+	--dx-bg-30: rgb(13 9 7 / .3);
+	--dx-bg-45: rgb(13 9 7 / .45);
+	--dx-bg-60: rgb(13 9 7 / .6);
+	--dx-bg-65: rgb(13 9 7 / .65);
+	--dx-bg-72: rgb(13 9 7 / .72);
+	--dx-bg-75: rgb(13 9 7 / .75);
+	--dx-bg-92: rgb(13 9 7 / .92);
+	--dx-copper-06: rgb(222 160 116 / .06);
+	--dx-copper-25: rgb(222 160 116 / .25);
+	--dx-copper-32: rgb(222 160 116 / .32);
+	--dx-copper-40: rgb(222 160 116 / .4);
+	--dx-copper-45: rgb(222 160 116 / .45);
+	--dx-copper-48: rgb(222 160 116 / .48);
+
+	/* Type */
+	--dx-display: "Fraunces", "Iowan Old Style", Georgia, serif;
+	--dx-sans: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+	--dx-mono: "Space Mono", ui-monospace, "SFMono-Regular", Consolas, monospace;
+
+	/* Layout */
+	--dx-shell: 1320px;
+	--dx-gutter: 1.5rem;
+	--dx-inline: max(var(--dx-gutter), calc((100% - var(--dx-shell)) / 2));
+	--dx-section-y: 7rem;
+	--dx-radius: .5rem;
+	--dx-ease: cubic-bezier(.2, .8, .2, 1);
+}
+
+/* 2. Fonts (self-hosted, SIL OFL 1.1 — see CREDITS.md) ===================== */
+
+@font-face {
+	font-family: "Fraunces";
+	font-style: normal;
+	font-weight: 400 600;
+	font-display: swap;
+	src: url("../fonts/fraunces.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "Fraunces";
+	font-style: italic;
+	font-weight: 400 500;
+	font-display: swap;
+	src: url("../fonts/fraunces-italic.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "Manrope";
+	font-style: normal;
+	font-weight: 400 700;
+	font-display: swap;
+	src: url("../fonts/manrope.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "Space Mono";
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url("../fonts/space-mono-400.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "Space Mono";
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: url("../fonts/space-mono-700.woff2") format("woff2");
+}
+
+/* 3. Reset / base ========================================================== */
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	background: var(--dx-bg);
+	scroll-behavior: smooth;
+	-webkit-text-size-adjust: 100%;
+}
+
+body {
+	margin: 0;
+	background: var(--dx-bg);
+	color: var(--dx-fg);
+	font-family: var(--dx-sans);
+	font-size: 1rem;
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+}
+
+:where(h1, h2, h3, h4, h5, h6, p, figure, blockquote, ul, ol, dl) {
+	margin: 0;
+}
+
+:where(ul[class], .elementor-widget-text-editor ul) {
+	padding: 0;
+	list-style: none;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+img,
+video,
+svg {
+	display: block;
+	max-width: 100%;
+}
+
+img {
+	height: auto;
+}
+
+button,
+input,
+select,
+textarea {
+	font: inherit;
+	color: inherit;
+	letter-spacing: inherit;
+}
+
+button {
+	cursor: pointer;
+}
+
+[hidden] {
+	display: none !important;
+}
+
+::selection {
+	background: var(--dx-copper);
+	color: var(--dx-bg);
+}
+
+/* Elementor heading widgets inherit the look from the dx-* wrapper class. */
+.elementor-widget-heading .elementor-heading-title {
+	font: inherit;
+	color: inherit;
+	letter-spacing: inherit;
+	text-transform: inherit;
+	line-height: inherit;
+}
+
+.elementor-widget-text-editor p + p {
+	margin-top: 1em;
+}
+
+.dx-icon {
+	width: 1rem;
+	height: 1rem;
+	flex: none;
+}
+
+/* 4. Typography ============================================================ */
+
+.dx-eyebrow {
+	display: flex;
+	align-items: center;
+	gap: .75rem;
+	color: var(--dx-copper);
+	font-family: var(--dx-mono);
+	font-size: .66rem;
+	line-height: 1.4;
+	letter-spacing: .26em;
+	text-transform: uppercase;
+}
+
+.dx-eyebrow::before {
+	content: "";
+	flex: none;
+	width: 2rem;
+	height: 1px;
+	background: currentColor;
+}
+
+.dx-index,
+.dx-footer-label,
+.dx-caption {
+	color: var(--dx-muted-fg);
+	font-family: var(--dx-mono);
+	font-size: .66rem;
+	line-height: 1.5;
+	letter-spacing: .2em;
+	text-transform: uppercase;
+}
+
+.dx-section-title {
+	max-width: 18ch;
+	margin-top: 1rem;
+	font-family: var(--dx-display);
+	font-size: clamp(2.65rem, 5vw, 4.8rem);
+	font-weight: 500;
+	line-height: .98;
+	letter-spacing: 0;
+	text-wrap: balance;
+}
+
+.dx-intro {
+	max-width: 32rem;
+	color: var(--dx-muted-fg);
+	line-height: 1.75;
+}
+
+.dx-card-title {
+	margin-top: 1rem;
+	font-family: var(--dx-display);
+	font-size: 1.8rem;
+	font-weight: 500;
+	line-height: 1.1;
+}
+
+.dx-card-copy {
+	margin-top: .75rem;
+	color: var(--dx-muted-fg);
+	font-size: .9rem;
+	line-height: 1.7;
+}
+
+/* 5. Components ============================================================ */
+
+/* --- Logo tile (Elementor Image widget with .dx-logo) -------------------- */
+
+.dx-logo {
+	--dx-logo-size: 3rem;
+	flex: none;
+	width: var(--dx-logo-size) !important;
+	height: var(--dx-logo-size);
+	overflow: hidden;
+	border: 1px solid var(--dx-copper-40);
+	border-radius: .25rem;
+	background: var(--dx-bg);
+	box-shadow: 0 10px 30px var(--dx-bg-60);
+}
+
+.dx-logo a {
+	display: block;
+	height: 100%;
+}
+
+.dx-logo img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	max-width: none;
+	object-fit: cover;
+}
+
+.dx-logo--xl {
+	--dx-logo-size: 6.25rem;
+	opacity: .92;
+	box-shadow: 0 20px 60px var(--dx-bg-75);
+}
+
+/* Beats Elementor's `.elementor-widget:not(:last-child)` spacing rule. */
+.e-con > .elementor-widget.dx-hero-logo {
+	margin-block-end: 1.5rem;
+}
+
+/* --- Buttons (Elementor Button widget + native buttons) ------------------ */
+
+.dx-btn .elementor-button,
+button.dx-btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: .65rem;
+	min-height: 2.75rem;
+	padding: .7rem 1.25rem;
+	border: 1px solid transparent;
+	border-radius: 999px;
+	font-family: var(--dx-mono);
+	font-size: .66rem;
+	font-weight: 700;
+	line-height: 1.2;
+	letter-spacing: .16em;
+	text-transform: uppercase;
+	transition: transform .25s var(--dx-ease), background-color .25s, border-color .25s, color .25s;
+}
+
+.dx-btn .elementor-button-content-wrapper {
+	display: inline-flex;
+	align-items: center;
+	gap: .65rem;
+}
+
+.dx-btn--primary .elementor-button,
+button.dx-btn--primary {
+	border-color: var(--dx-copper);
+	background: var(--dx-copper);
+	color: var(--dx-bg);
+}
+
+.dx-btn--ghost .elementor-button,
+button.dx-btn--ghost {
+	border-color: var(--dx-fg-25);
+	background: var(--dx-bg-65);
+	color: var(--dx-fg);
+	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(10px);
+}
+
+.dx-btn .elementor-button:hover,
+button.dx-btn:hover {
+	transform: translateY(-2px);
+	border-color: var(--dx-copper-hover);
+	background: var(--dx-copper-hover);
+	color: var(--dx-bg);
+}
+
+.dx-btn--lg .elementor-button,
+button.dx-btn--lg {
+	min-height: 3.35rem;
+	padding-inline: 1.65rem;
+}
+
+.dx-btn--arrow .elementor-button-text::after,
+.dx-btn--arrow-ne .elementor-button-text::after {
+	content: "\2198" / "";
+	margin-left: .65rem;
+	font-family: var(--dx-sans);
+	font-size: 1.1em;
+	letter-spacing: 0;
+}
+
+.dx-btn--arrow-ne .elementor-button-text::after {
+	content: "\2197" / "";
+}
+
+button.dx-btn .dx-icon {
+	width: 1rem;
+	height: 1rem;
+}
+
+/* --- Icon links ---------------------------------------------------------- */
+
+.dx-social {
+	display: flex;
+	flex-wrap: wrap;
+	gap: .65rem;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.dx-social__link,
+.dx-video-toggle,
+.dx-menu-toggle {
+	display: inline-grid;
+	place-items: center;
+	width: 2.65rem;
+	height: 2.65rem;
+	padding: 0;
+	border: 1px solid var(--dx-copper-48);
+	border-radius: 50%;
+	background: var(--dx-bg-72);
+	color: var(--dx-copper);
+	transition: transform .25s var(--dx-ease), background-color .25s, border-color .25s, color .25s;
+}
+
+.dx-social__link .dx-icon {
+	width: 1.15rem;
+	height: 1.15rem;
+}
+
+.dx-social__link:hover,
+.dx-video-toggle:hover {
+	transform: translateY(-3px);
+	border-color: var(--dx-copper);
+	background: var(--dx-copper);
+	color: var(--dx-bg);
+}
+
+.dx-social--lg .dx-social__link {
+	width: 3.35rem;
+	height: 3.35rem;
+	border-color: var(--dx-fg-25);
+	background: var(--dx-bg-65);
+	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(10px);
+}
+
+.dx-social--lg .dx-icon {
+	width: 1.6rem;
+	height: 1.6rem;
+}
+
+.dx-install {
+	display: inline-flex;
+	align-items: center;
+	gap: .55rem;
+	margin-top: 1.25rem;
+	padding: .7rem 1.1rem;
+	border: 1px solid var(--dx-copper-48);
+	border-radius: 999px;
+	background: var(--dx-bg-72);
+	color: var(--dx-copper);
+	font-family: var(--dx-mono);
+	font-size: .62rem;
+	font-weight: 700;
+	letter-spacing: .12em;
+	text-transform: uppercase;
+}
+
+/* --- Header -------------------------------------------------------------- */
+
+.e-con.dx-header {
+	--position: absolute;
+	--z-index: 50;
+	--min-height: 5rem;
+	--padding-left: var(--dx-inline);
+	--padding-right: var(--dx-inline);
+	--gap: .75rem;
+	--column-gap: .75rem;
+	inset: 0 0 auto;
+	flex-wrap: nowrap;
+	align-items: center;
+	justify-content: space-between;
+	border-bottom: 1px solid var(--dx-line);
+	background: var(--dx-bg-45);
+	-webkit-backdrop-filter: blur(12px);
+	backdrop-filter: blur(12px);
+}
+
+.e-con.dx-brand {
+	--width: auto;
+	--gap: .75rem;
+	--column-gap: .75rem;
+	flex: 0 1 auto;
+	flex-wrap: nowrap;
+	align-items: center;
+	min-width: 0;
+}
+
+.dx-brand-name {
+	min-width: 0;
+	max-width: 17rem;
+	color: var(--dx-fg);
+	font-family: var(--dx-mono);
+	font-size: .68rem;
+	font-weight: 700;
+	line-height: 1.25;
+	letter-spacing: .18em;
+	text-transform: uppercase;
+}
+
+.dx-header-nav {
+	flex: 1 1 auto;
+	display: flex;
+	justify-content: center;
+}
+
+.dx-nav__list {
+	display: flex;
+	align-items: center;
+	gap: 2rem;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.dx-nav__link {
+	display: inline-block;
+	padding-block: .5rem;
+	color: var(--dx-muted-fg);
+	font-family: var(--dx-mono);
+	font-size: .66rem;
+	letter-spacing: .2em;
+	text-transform: uppercase;
+	transition: color .25s;
+}
+
+.dx-nav__link:hover {
+	color: var(--dx-copper);
+}
+
+.dx-menu-toggle {
+	display: none;
+	border-color: var(--dx-fg-25);
+	color: var(--dx-fg);
+}
+
+.dx-menu-toggle__bars,
+.dx-menu-toggle__bars::before,
+.dx-menu-toggle__bars::after {
+	display: block;
+	width: 1.05rem;
+	height: 1px;
+	background: currentColor;
+	transition: transform .25s var(--dx-ease), opacity .2s;
+}
+
+.dx-menu-toggle__bars {
+	position: relative;
+}
+
+.dx-menu-toggle__bars::before,
+.dx-menu-toggle__bars::after {
+	content: "";
+	position: absolute;
+	left: 0;
+}
+
+.dx-menu-toggle__bars::before {
+	transform: translateY(-5px);
+}
+
+.dx-menu-toggle__bars::after {
+	transform: translateY(5px);
+}
+
+.dx-menu-toggle[aria-expanded="true"] .dx-menu-toggle__bars {
+	background: transparent;
+}
+
+.dx-menu-toggle[aria-expanded="true"] .dx-menu-toggle__bars::before {
+	transform: rotate(45deg);
+}
+
+.dx-menu-toggle[aria-expanded="true"] .dx-menu-toggle__bars::after {
+	transform: rotate(-45deg);
+}
+
+.dx-header-cta {
+	flex: none;
+}
+
+/* --- Main wrapper -------------------------------------------------------- */
+
+.e-con.dx-main {
+	--gap: 0px;
+	--row-gap: 0px;
+}
+
+/* --- Hero ---------------------------------------------------------------- */
+
+.e-con.dx-hero {
+	--min-height: 92svh;
+	--overflow: hidden;
+	--padding-top: 8rem;
+	--padding-bottom: 4rem;
+	--padding-left: var(--dx-inline);
+	--padding-right: var(--dx-inline);
+	isolation: isolate;
+	justify-content: center;
+	background: var(--dx-bg);
+}
+
+.dx-hero-media {
+	position: absolute !important;
+	inset: 0;
+	z-index: 0;
+	width: auto !important;
+	margin: 0 !important;
+}
+
+.dx-hero-stage {
+	position: absolute;
+	inset: 0;
+	overflow: hidden;
+}
+
+.dx-hero-camera {
+	position: absolute;
+	inset: -4%;
+	perspective: 1400px;
+	transform-style: preserve-3d;
+}
+
+.dx-hero-video {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	max-width: none;
+	object-fit: cover;
+	object-position: center;
+	translate: calc(var(--mx, 0) * -10px) calc(var(--my, 0) * -6px);
+	scale: 1.04;
+	transition: translate .2s ease-out;
+	animation: dx-film-in 1.2s ease-out both;
+}
+
+.dx-plane {
+	position: absolute;
+	pointer-events: none;
+	transform-style: preserve-3d;
+	transition: transform .25s ease-out;
+}
+
+.dx-plane--back {
+	inset: 12% 7% 8% 48%;
+	border: 1px solid var(--dx-copper-25);
+	box-shadow: inset 0 0 80px var(--dx-copper-06);
+	transform: translate3d(calc(var(--mx, 0) * 24px), calc(var(--my, 0) * 15px), 50px) rotateY(-9deg);
+}
+
+.dx-plane--glass {
+	inset: 19% 5% 19% 64%;
+	border-left: 1px solid var(--dx-fg-28);
+	background: linear-gradient(110deg, transparent, var(--dx-fg-07), transparent);
+	-webkit-backdrop-filter: blur(1px);
+	backdrop-filter: blur(1px);
+	transform: translate3d(calc(var(--mx, 0) * 42px), calc(var(--my, 0) * 25px), 90px) rotateY(-14deg);
+}
+
+.dx-light-line {
+	position: absolute;
+	top: 22%;
+	right: 13%;
+	width: 1px;
+	height: 48%;
+	background: linear-gradient(transparent, var(--dx-copper), transparent);
+	box-shadow: 0 0 28px var(--dx-copper);
+	opacity: .7;
+	transform: translate3d(calc(var(--mx, 0) * 56px), calc(var(--my, 0) * 34px), 120px);
+	transition: transform .2s ease-out;
+}
+
+.dx-hero-shade {
+	position: absolute;
+	inset: 0;
+	background:
+		linear-gradient(90deg, var(--dx-bg) 3%, var(--dx-bg-92) 38%, var(--dx-bg-30) 74%),
+		linear-gradient(0deg, var(--dx-bg), transparent 38%);
+}
+
+.dx-depth-rail {
+	position: absolute;
+	top: 48%;
+	right: -7rem;
+	z-index: 2;
+	display: none;
+	gap: 2rem;
+	color: var(--dx-fg-45);
+	font-family: var(--dx-mono);
+	font-size: .55rem;
+	letter-spacing: .28em;
+	text-transform: uppercase;
+	transform: rotate(90deg);
+}
+
+.dx-video-toggle {
+	position: absolute;
+	right: var(--dx-inline);
+	bottom: 1.5rem;
+	z-index: 3;
+	border-color: var(--dx-fg-25);
+	background: var(--dx-bg-65);
+	color: var(--dx-fg);
+}
+
+.dx-video-toggle .dx-icon {
+	width: 1.1rem;
+	height: 1.1rem;
+}
+
+.dx-video-toggle[data-state="playing"] .dx-icon:last-child,
+.dx-video-toggle:not([data-state="playing"]) .dx-icon:first-child {
+	display: none;
+}
+
+.e-con.dx-hero-content {
+	--width: min(100%, 56rem);
+	position: relative;
+	z-index: 2;
+}
+
+.dx-hero-title {
+	max-width: 10ch;
+	margin-top: 1.75rem;
+	font-family: var(--dx-display);
+	font-size: clamp(4.2rem, 10vw, 9rem);
+	font-weight: 500;
+	line-height: .86;
+	letter-spacing: 0;
+}
+
+.dx-hero-title em {
+	display: block;
+	color: var(--dx-copper);
+	font-style: italic;
+	font-weight: 400;
+}
+
+.dx-hero-lede {
+	max-width: 36rem;
+	margin-top: 1.75rem;
+	color: var(--dx-muted-fg);
+	font-size: clamp(1rem, .95rem + .3vw, 1.125rem);
+	line-height: 1.75;
+}
+
+.e-con.dx-hero-actions {
+	--gap: .75rem;
+	--column-gap: .75rem;
+	--row-gap: .75rem;
+	margin-top: 2.25rem;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+.e-con.dx-hero-actions > .elementor-element {
+	--container-widget-width: auto;
+	width: auto;
+}
+
+.dx-hero-cities ul {
+	display: flex;
+	flex-wrap: wrap;
+	gap: .5rem clamp(.75rem, 4vw, 2.25rem);
+	margin-top: 3.5rem;
+	font-family: var(--dx-mono);
+	font-size: clamp(.7rem, 1.5vw, .9rem);
+	font-weight: 700;
+	letter-spacing: .12em;
+	text-transform: uppercase;
+}
+
+/* --- Section shell -------------------------------------------------------- */
+
+.e-con.dx-section {
+	--padding-top: var(--dx-section-y);
+	--padding-bottom: var(--dx-section-y);
+	--padding-left: var(--dx-inline);
+	--padding-right: var(--dx-inline);
+	background: var(--dx-bg);
+}
+
+.e-con.dx-section--alt {
+	background: var(--dx-surface);
+}
+
+.e-con.dx-section-heading {
+	--gap: 2rem;
+	--row-gap: 2rem;
+	--column-gap: 2rem;
+	--align-items: end;
+	padding-bottom: 2.5rem;
+	border-bottom: 1px solid var(--dx-line);
+}
+
+/* --- Assurance ----------------------------------------------------------- */
+
+.e-con.dx-assurance {
+	--padding-top: 3.5rem;
+	--padding-bottom: 3.5rem;
+	--gap: 2rem;
+	--row-gap: 2rem;
+	--column-gap: 2rem;
+}
+
+.e-con.dx-assure {
+	padding-left: 1.25rem;
+	border-left: 1px solid var(--dx-copper-40);
+}
+
+.dx-assure .dx-card-title {
+	margin-top: .75rem;
+	font-size: 1.5rem;
+	line-height: 1.25;
+}
+
+.dx-assure .dx-card-copy {
+	margin-top: .5rem;
+	font-size: .875rem;
+	line-height: 1.6;
+}
+
+/* --- Services ------------------------------------------------------------ */
+
+.e-con.dx-services-grid,
+.e-con.dx-city-grid {
+	--gap: 1px;
+	--row-gap: 1px;
+	--column-gap: 1px;
+	--overflow: hidden;
+	border: 1px solid var(--dx-line);
+	border-radius: var(--dx-radius);
+	background: var(--dx-line);
+}
+
+.e-con.dx-services-grid {
+	margin-top: 3rem;
+}
+
+.e-con.dx-service {
+	--padding-top: 2rem;
+	--padding-right: 2rem;
+	--padding-bottom: 2rem;
+	--padding-left: 2rem;
+	background: var(--dx-bg);
+	transition: background-color .3s;
+}
+
+.e-con.dx-service:hover {
+	background: var(--dx-surface);
+}
+
+.dx-service .dx-index {
+	transition: color .3s;
+}
+
+.dx-service:hover .dx-index {
+	color: var(--dx-copper);
+}
+
+/* --- Fleet --------------------------------------------------------------- */
+
+.e-con.dx-fleet-grid {
+	--gap: 2rem;
+	--row-gap: 3rem;
+	--column-gap: 2rem;
+	--align-items: start;
+	margin-top: 4rem;
+	perspective: 1400px;
+}
+
+.e-con.dx-fleet-card {
+	/* Elementor wraps flex containers on mobile; a wrapping column has no definite
+	   width, which would collapse the 4:3 frame until its lazy image loads. */
+	--flex-wrap-mobile: nowrap;
+	flex-wrap: nowrap;
+	transform-style: preserve-3d;
+	transition: transform .6s var(--dx-ease);
+}
+
+.dx-fleet-media {
+	position: relative;
+	width: 100%;
+	aspect-ratio: 4 / 3;
+	overflow: hidden;
+	padding: .7rem;
+	border: 1px solid var(--dx-line);
+	border-radius: .45rem;
+	background: var(--dx-bg);
+	box-shadow: 0 30px 70px var(--dx-bg-75);
+}
+
+.dx-fleet-media img {
+	width: 100%;
+	height: 100%;
+	border-radius: .3rem;
+	object-fit: cover;
+	/* A light shared grade so photos from different shoots sit together. */
+	filter: saturate(.86) contrast(1.04) brightness(.92) sepia(.06);
+	scale: 1.1;
+	transition: scale .8s var(--dx-ease);
+	animation: dx-pan 8s ease-in-out infinite;
+}
+
+.dx-fleet-card:nth-child(2) .dx-fleet-media img {
+	animation-delay: -2.7s;
+}
+
+.dx-fleet-card:nth-child(3) .dx-fleet-media img {
+	animation-delay: -5.3s;
+}
+
+/* Fleet sheen: a diagonal highlight that sweeps across on hover. */
+.dx-fleet-media::after {
+	content: "";
+	position: absolute;
+	inset: .7rem;
+	border-radius: .3rem;
+	background: linear-gradient(115deg, transparent 38%, var(--dx-fg-13) 50%, transparent 62%);
+	pointer-events: none;
+	transform: translateX(-120%);
+	transition: transform .8s var(--dx-ease);
+}
+
+.dx-fleet-card .dx-card-title {
+	margin-top: 1.5rem;
+}
+
+.dx-fleet-button {
+	margin-top: 1.25rem;
+}
+
+.dx-fleet-button .elementor-button {
+	min-height: 2.85rem;
+	letter-spacing: .12em;
+}
+
+/* Pointer effects only where a precise pointer can hover. */
+@media (hover: hover) and (pointer: fine) {
+	.e-con.dx-fleet-card:hover {
+		transform: translateY(-12px) rotateX(calc(var(--my, 0) * -2deg)) rotateY(calc(var(--mx, 0) * 3deg));
+	}
+
+	/* Pause the drift and ease the zoom back so more of the car shows. */
+	.dx-fleet-card:hover .dx-fleet-media img {
+		scale: 1.055;
+		animation-play-state: paused;
+	}
+
+	.dx-fleet-card:hover .dx-fleet-media::after {
+		transform: translateX(120%);
+	}
+}
+
+/* --- Cities -------------------------------------------------------------- */
+
+.e-con.dx-cities-layout {
+	--gap: 4rem;
+	--row-gap: 3rem;
+	--column-gap: 4rem;
+	--align-items: center;
+}
+
+.dx-cities-layout .dx-intro {
+	max-width: 28rem;
+	margin-top: 1.5rem;
+}
+
+.e-con.dx-city-grid {
+	box-shadow: 30px 40px 80px var(--dx-bg-75);
+}
+
+/* The 3D tilt only applies in the two-column layout, where the grid has its own
+   column; stacked, a tilted full-width grid would push past the viewport edge. */
+@media (min-width: 1024px) {
+	.e-con.dx-city-grid {
+		transform: perspective(1100px) rotateY(-4deg);
+		transform-origin: 60% 50%;
+	}
+}
+
+.e-con.dx-city-cell {
+	--padding-top: 1.75rem;
+	--padding-right: 1.75rem;
+	--padding-bottom: 1.75rem;
+	--padding-left: 1.75rem;
+	--min-height: 11rem;
+	background: var(--dx-bg);
+	transition: background-color .25s;
+}
+
+.e-con.dx-city-cell:hover {
+	background: var(--dx-surface);
+}
+
+.dx-city-cell .dx-index {
+	transition: color .25s;
+}
+
+.dx-city-cell:hover .dx-index {
+	color: var(--dx-copper);
+}
+
+.dx-city-cell .dx-card-title {
+	font-size: clamp(1.8rem, 1.25rem + 1.3vw, 2.3rem);
+}
+
+.dx-city-cell .dx-caption {
+	margin-top: .75rem;
+	font-size: .6rem;
+}
+
+/* --- Process ------------------------------------------------------------- */
+
+.e-con.dx-process-grid {
+	--gap: 3rem;
+	--row-gap: 3rem;
+	--column-gap: 3rem;
+	margin-top: 4rem;
+}
+
+.dx-process-number {
+	color: var(--dx-copper-45);
+	font-family: var(--dx-display);
+	font-size: 4.5rem;
+	line-height: 1;
+}
+
+.dx-process-step .dx-card-title {
+	margin-top: 1.25rem;
+}
+
+/* --- Quote band ---------------------------------------------------------- */
+
+.e-con.dx-quote-band {
+	--padding-top: 8rem;
+	--padding-bottom: 8rem;
+	/* clip (not hidden) so the sticky intro still sticks */
+	overflow: clip;
+	isolation: isolate;
+	background: var(--dx-fg);
+	color: var(--dx-bg);
+}
+
+.dx-quote-band :focus-visible {
+	outline-color: var(--dx-copper-deep);
+}
+
+.dx-quote-band .dx-eyebrow {
+	color: var(--dx-copper-deep);
+}
+
+.dx-orbit-widget {
+	position: absolute !important;
+	inset: 0;
+	z-index: -1;
+	width: auto !important;
+	pointer-events: none;
+}
+
+.dx-orbit {
+	position: absolute;
+	bottom: -16rem;
+	left: -12rem;
+	width: 44rem;
+	aspect-ratio: 1;
+	transform: perspective(900px) rotateX(68deg) rotate(-22deg);
+	transform-style: preserve-3d;
+}
+
+.dx-orbit i {
+	position: absolute;
+	inset: 0;
+	border: 1px solid var(--dx-copper-32);
+	border-radius: 50%;
+	animation: dx-orbit 5s ease-in-out infinite alternate;
+}
+
+.dx-orbit i:nth-child(2) {
+	inset: 5rem;
+	animation-delay: -1.5s;
+}
+
+.dx-orbit i:nth-child(3) {
+	inset: 10rem;
+	animation-delay: -3s;
+}
+
+.e-con.dx-quote-layout {
+	--gap: 4rem;
+	--row-gap: 4rem;
+	--column-gap: 4rem;
+	--align-items: start;
+	position: relative;
+	z-index: 1;
+}
+
+.dx-quote-title {
+	max-width: 9ch;
+	margin-top: 1.25rem;
+	font-family: var(--dx-display);
+	font-size: clamp(3.2rem, 6vw, 6rem);
+	font-weight: 500;
+	line-height: .9;
+	letter-spacing: 0;
+}
+
+.dx-quote-copy {
+	max-width: 28rem;
+	margin-top: 2rem;
+	color: rgb(13 9 7 / .72);
+	line-height: 1.75;
+}
+
+/* Seal: the logo (Driveo Logo widget) beside two small editable lines. */
+.e-con.dx-seal {
+	--gap: 1rem;
+	--column-gap: 1rem;
+	--width: auto;
+	flex-wrap: nowrap;
+	align-items: center;
+	margin-top: 3rem;
+}
+
+/* The seal sits on the cream band: no dark drop shadow (matches the original tile). */
+.dx-logo--seal {
+	box-shadow: none;
+}
+
+.dx-seal-text p {
+	font-family: var(--dx-mono);
+	font-size: .6rem;
+	line-height: 1.7;
+	letter-spacing: .16em;
+	text-transform: uppercase;
+}
+
+/* The form card: Contact Form 7 inside the Elementor Shortcode widget `.dx-quote-card`.
+   Everything below is scoped to it, so other CF7 forms on the site keep their own look. */
+.dx-quote-card {
+	/* Light-card palette: opaque blends of --dx-bg over the cream card, so the rendered
+	   colour is exactly what the contrast figures describe (on #efe7da). */
+	--dx-q-text: var(--dx-bg);          /* 16.2:1 */
+	--dx-q-muted: #55504b;              /* 6.5:1  hints, privacy, success body */
+	--dx-q-placeholder: #67625b;        /* 4.9:1  weaker than entered text */
+	--dx-q-rule: #bdb6ac;               /* subtle 1px hairline */
+	--dx-q-error: var(--dx-danger);     /* #9f1d15, 6.4:1 */
+	--dx-q-accent: var(--dx-copper-deep); /* #8f5a34, 4.65:1 */
+	position: relative;
+	padding: clamp(1.4rem, 4vw, 3rem);
+	border: 1px solid var(--dx-copper-25);
+	border-radius: var(--dx-radius);
+	background: var(--dx-fg); /* cream card: oklch(93% .019 78) */
+	box-shadow: 0 45px 100px rgb(13 9 7 / .35), inset 0 1px rgb(239 231 218 / .06);
+	color: var(--dx-q-text);
+}
+
+/* Buttons and messages inside the card (fields have their own focus rule below). */
+.dx-quote-card :focus-visible {
+	outline: 2px solid var(--dx-q-accent);
+	outline-offset: 2px;
+}
+
+.dx-quote-card .dx-eyebrow {
+	color: var(--dx-q-accent);
+}
+
+.dx-quote-card .wpcf7,
+.dx-quote-card .wpcf7-form {
+	margin: 0;
+}
+
+.dx-form-grid {
+	display: grid;
+	gap: 1.25rem;
+}
+
+.dx-quote-card .dx-field {
+	display: grid;
+	align-content: start;
+	gap: .55rem;
+	min-width: 0;
+}
+
+.dx-quote-card .dx-field__label {
+	color: var(--dx-bg); /* oklch(14.5% .008 55) */
+	font-family: var(--dx-mono);
+	font-size: .62rem;
+	font-weight: 700;
+	letter-spacing: .16em;
+	text-transform: uppercase;
+}
+
+.dx-quote-card .wpcf7-form-control-wrap {
+	position: relative;
+	display: block;
+}
+
+/* Inputs, selects, textarea: transparent, dark text, bottom hairline only */
+.dx-quote-card .wpcf7-form-control:not(.wpcf7-submit) {
+	width: 100%;
+	min-height: 3.15rem;
+	padding: 0 .9rem;
+	border: 0;
+	border-bottom: 1px solid var(--dx-q-rule);
+	border-radius: 0;
+	background: transparent;
+	box-shadow: none;
+	color: var(--dx-q-text); /* oklch(14.5% .008 55) */
+	font-family: var(--dx-sans);
+	font-size: 1rem;
+	line-height: 1.4;
+	color-scheme: light; /* dark native date/time icons on the cream card */
+	appearance: none;
+	transition: border-color .2s, box-shadow .2s;
+}
+
+.dx-quote-card textarea.wpcf7-form-control {
+	min-height: 7rem;
+	padding: .8rem .9rem;
+	resize: vertical;
+}
+
+.dx-quote-card .wpcf7-form-control::placeholder {
+	color: var(--dx-q-placeholder);
+	opacity: 1;
+}
+
+/* Focus: only the bottom border turns copper — no outline, ring or shadow.
+   :focus-within also covers the inner parts of native date/time inputs. */
+.dx-quote-card .wpcf7-form-control:not(.wpcf7-submit):focus,
+.dx-quote-card .wpcf7-form-control:not(.wpcf7-submit):focus-visible,
+.dx-quote-card .wpcf7-form-control:not(.wpcf7-submit):focus-within {
+	border-bottom-color: var(--dx-copper); /* oklch(75.5% .095 56) */
+	box-shadow: none;
+	outline: none;
+}
+
+.dx-quote-card .wpcf7-form-control[aria-invalid="true"] {
+	border-color: var(--dx-q-error);
+}
+
+.dx-quote-card .wpcf7-not-valid-tip {
+	display: block;
+	margin-top: .45rem;
+	color: var(--dx-q-error);
+	font-size: .78rem;
+	font-weight: 600;
+	line-height: 1.4;
+}
+
+/* Select chevron (CSS only; CF7 strips inline SVG from templates) */
+.dx-quote-card .dx-select {
+	position: relative;
+	display: block;
+}
+
+.dx-quote-card .dx-select select {
+	padding-right: 2.6rem;
+	cursor: pointer;
+}
+
+.dx-quote-card .dx-select option {
+	background: var(--dx-fg);
+	color: var(--dx-q-text);
+}
+
+.dx-quote-card .dx-select::after {
+	content: "";
+	position: absolute;
+	top: 1.575rem;
+	right: .9rem;
+	width: 1rem;
+	height: 1rem;
+	background: var(--dx-q-accent);
+	pointer-events: none;
+	transform: translateY(-50%);
+	-webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6l6 -6'/%3E%3C/svg%3E") center / contain no-repeat;
+	mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6l6 -6'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+/* Steppers: +/- buttons around CF7's number input */
+.dx-quote-card .dx-stepper__control {
+	display: grid;
+	grid-template-columns: 2.75rem minmax(0, 1fr) 2.75rem;
+	align-items: center;
+	min-height: 3.15rem;
+	padding-inline: .2rem;
+	border: 0;
+	border-bottom: 1px solid var(--dx-q-rule);
+	border-radius: 0;
+	background: transparent;
+	transition: border-color .2s, box-shadow .2s;
+}
+
+.dx-quote-card .dx-stepper__control:focus-within {
+	border-bottom-color: var(--dx-copper);
+	box-shadow: none;
+}
+
+.dx-quote-card .dx-stepper__control .wpcf7-form-control {
+	min-height: 2.75rem;
+	padding: 0;
+	border: 0;
+	background: transparent;
+	font-family: var(--dx-mono);
+	font-size: 1rem;
+	text-align: center;
+	-moz-appearance: textfield;
+}
+
+.dx-quote-card .dx-stepper__control .wpcf7-form-control:focus {
+	box-shadow: none;
+}
+
+.dx-quote-card .dx-stepper__control input::-webkit-outer-spin-button,
+.dx-quote-card .dx-stepper__control input::-webkit-inner-spin-button {
+	margin: 0;
+	-webkit-appearance: none;
+}
+
+.dx-quote-card .dx-stepper__btn {
+	display: grid;
+	place-items: center;
+	width: 2.5rem;
+	height: 2.5rem;
+	padding: 0;
+	border: 0;
+	border-radius: 50%;
+	background: transparent;
+	color: var(--dx-q-text);
+	font-family: var(--dx-sans);
+	font-size: 1.25rem;
+	line-height: 1;
+	transition: background-color .2s, color .2s, opacity .2s;
+}
+
+.dx-quote-card .dx-stepper__btn:hover {
+	background: rgb(13 9 7 / .06);
+	color: var(--dx-q-accent);
+}
+
+.dx-quote-card .dx-stepper__btn:disabled {
+	cursor: not-allowed;
+	opacity: .35;
+}
+
+.dx-quote-card .dx-field__hint {
+	color: var(--dx-q-muted);
+	font-size: .72rem;
+	line-height: 1.5;
+}
+
+/* Actions */
+.dx-quote-card .dx-quote-actions {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 1.25rem;
+	margin-top: 2rem;
+	padding-top: 1.5rem;
+	border-top: 1px solid var(--dx-q-rule);
+}
+
+.dx-quote-card .dx-quote-actions p {
+	max-width: 26rem;
+	color: var(--dx-q-muted);
+	font-size: .75rem;
+	line-height: 1.6;
+}
+
+.dx-quote-card .wpcf7-submit.dx-quote-submit {
+	min-height: 3.4rem;
+	padding: 0 1.7rem;
+	border: 1px solid var(--dx-copper);
+	border-radius: 999px;
+	background: var(--dx-copper);
+	color: var(--dx-bg);
+	font-family: var(--dx-mono);
+	font-size: .66rem;
+	font-weight: 700;
+	letter-spacing: .14em;
+	text-transform: uppercase;
+	cursor: pointer;
+	transition: transform .25s var(--dx-ease), background-color .25s, border-color .25s;
+}
+
+.dx-quote-card .wpcf7-submit.dx-quote-submit:hover:not(:disabled) {
+	transform: translateY(-2px);
+	border-color: var(--dx-copper-hover);
+	background: var(--dx-copper-hover);
+}
+
+.dx-quote-card .wpcf7-submit.dx-quote-submit:disabled {
+	cursor: progress;
+	opacity: .8;
+}
+
+.dx-quote-card .wpcf7-spinner {
+	margin: 0 0 0 .5rem;
+	background-color: var(--dx-q-accent);
+}
+
+/* CF7 status message (validation, spam, mail failure). Success uses the panel. */
+.dx-quote-card .wpcf7 form .wpcf7-response-output {
+	margin: 1.5rem 0 0;
+	padding: .9rem 1rem;
+	border: 0;
+	border-left: 2px solid var(--dx-q-accent);
+	border-radius: 0 .375rem .375rem 0;
+	background: rgb(230 222 210); /* a touch darker than the card */
+	color: var(--dx-q-text);
+	font-size: .875rem;
+	line-height: 1.5;
+}
+
+.dx-quote-card .wpcf7 form.invalid .wpcf7-response-output,
+.dx-quote-card .wpcf7 form.unaccepted .wpcf7-response-output,
+.dx-quote-card .wpcf7 form.failed .wpcf7-response-output,
+.dx-quote-card .wpcf7 form.aborted .wpcf7-response-output {
+	border-left-color: var(--dx-q-error);
+}
+
+.dx-quote-card .wpcf7 form.spam .wpcf7-response-output {
+	border-left-color: #8a5a00;
+}
+
+.dx-quote-card .wpcf7 form.sent .wpcf7-response-output {
+	display: none;
+}
+
+.dx-quote-card .wpcf7-response-output:focus {
+	outline: 2px solid var(--dx-q-accent);
+	outline-offset: 2px;
+}
+
+/* Confirmation panel (markup lives in the CF7 template) */
+.dx-quote-card .dx-quote-success {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+	min-height: 26rem;
+}
+
+.dx-quote-card .dx-quote-success::before {
+	content: "";
+	width: 3.5rem;
+	height: 3.5rem;
+	margin-bottom: 2rem;
+	border-radius: 50%;
+	background:
+		url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230d0907' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5l10 -10'/%3E%3C/svg%3E") center / 1.4rem no-repeat,
+		var(--dx-copper);
+}
+
+.dx-quote-card .dx-quote-success:focus {
+	outline: none;
+}
+
+.dx-quote-card .dx-quote-success h3 {
+	max-width: 12ch;
+	margin-top: 1rem;
+	color: var(--dx-bg);
+	font-family: var(--dx-display);
+	font-size: clamp(2.3rem, 4.5vw, 3.6rem);
+	font-weight: 500;
+	line-height: .95;
+}
+
+.dx-quote-card .dx-quote-success p:not(.dx-eyebrow) {
+	max-width: 30rem;
+	margin-top: 1.25rem;
+	color: var(--dx-q-muted);
+	line-height: 1.7;
+}
+
+.dx-quote-card .dx-quote-ref {
+	color: var(--dx-q-accent);
+	font-family: var(--dx-mono);
+	letter-spacing: .06em;
+}
+
+.dx-quote-card .dx-quote-again {
+	margin-top: 2rem;
+	min-height: 2.75rem;
+	padding: .7rem 1.25rem;
+	border: 1px solid rgb(13 9 7 / .35);
+	border-radius: 999px;
+	background: transparent;
+	color: var(--dx-q-text);
+	font-family: var(--dx-mono);
+	font-size: .66rem;
+	font-weight: 700;
+	letter-spacing: .16em;
+	text-transform: uppercase;
+	transition: transform .25s var(--dx-ease), background-color .25s, border-color .25s, color .25s;
+}
+
+.dx-quote-card .dx-quote-again:hover {
+	transform: translateY(-2px);
+	border-color: var(--dx-copper);
+	background: var(--dx-copper);
+	color: var(--dx-bg);
+}
+
+/* Honeypot: off-screen for people, visible to naive bots */
+.dx-trap {
+	position: absolute !important;
+	left: -9999px !important;
+	width: 1px !important;
+	height: 1px !important;
+	overflow: hidden !important;
+}
+
+/* --- Testimonial --------------------------------------------------------- */
+
+.e-con.dx-testimonial {
+	--padding-top: 8rem;
+	--padding-bottom: 8rem;
+}
+
+.dx-testimonial-quote blockquote {
+	max-width: 26ch;
+	margin-top: 2rem;
+	color: var(--dx-fg);
+	font-family: var(--dx-display);
+	font-size: clamp(2.4rem, 5vw, 4.7rem);
+	font-weight: 400;
+	line-height: 1.04;
+	text-wrap: balance;
+}
+
+.dx-testimonial-attribution {
+	margin-top: 2rem;
+	color: var(--dx-muted-fg);
+	font-family: var(--dx-mono);
+	font-size: .66rem;
+	letter-spacing: .2em;
+	text-transform: uppercase;
+}
+
+/* --- Footer -------------------------------------------------------------- */
+
+.e-con.dx-footer {
+	--padding-top: 4rem;
+	--padding-bottom: 2.5rem;
+	--padding-left: var(--dx-inline);
+	--padding-right: var(--dx-inline);
+	border-top: 1px solid var(--dx-line);
+	background: var(--dx-surface);
+}
+
+.e-con.dx-footer-grid {
+	--gap: 3rem;
+	--row-gap: 3rem;
+	--column-gap: 3rem;
+}
+
+.dx-brand--footer .dx-logo {
+	--dx-logo-size: 4.5rem;
+}
+
+.dx-brand--footer .dx-brand-name {
+	max-width: none;
+	font-size: .75rem;
+	letter-spacing: .28em;
+}
+
+.dx-footer-tagline {
+	max-width: 24rem;
+	margin-top: 1.5rem;
+	font-family: var(--dx-display);
+	font-size: 1.875rem;
+	line-height: 1.2;
+}
+
+.dx-footer .dx-btn {
+	margin-top: 1.75rem;
+}
+
+.dx-footer-contact a {
+	display: inline-block;
+	margin-top: 1.25rem;
+	font-size: .95rem;
+	transition: color .2s;
+}
+
+.dx-footer-contact a + br + a {
+	margin-top: .75rem;
+}
+
+.dx-footer-contact a:hover {
+	color: var(--dx-copper);
+}
+
+.dx-footer-contact p + p,
+.dx-footer-contact .dx-muted {
+	margin-top: .75rem;
+	color: var(--dx-muted-fg);
+	font-size: .875rem;
+}
+
+.dx-footer-social {
+	margin-top: 1.5rem;
+}
+
+/* Phone / email icons drawn with CSS masks, so the links stay plain editable text. */
+.dx-footer-contact a[href^="tel:"],
+.dx-footer-contact a[href^="mailto:"] {
+	display: inline-flex;
+	align-items: center;
+	gap: .6rem;
+}
+
+.dx-footer-contact a[href^="tel:"]::before,
+.dx-footer-contact a[href^="mailto:"]::before {
+	content: "";
+	flex: none;
+	width: 1rem;
+	height: 1rem;
+	background: var(--dx-copper);
+	-webkit-mask: var(--dx-icon) center / contain no-repeat;
+	mask: var(--dx-icon) center / contain no-repeat;
+}
+
+.dx-footer-contact a[href^="tel:"]::before {
+	--dx-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2'/%3E%3C/svg%3E");
+}
+
+.dx-footer-contact a[href^="mailto:"]::before {
+	--dx-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10'/%3E%3Cpath d='M3 7l9 6l9 -6'/%3E%3C/svg%3E");
+}
+
+/* "Install as an app" label: an Elementor Heading widget; the button itself stays hidden
+   unless the browser offers installation. */
+.dx-install-title {
+	max-width: 22rem;
+	margin-top: 2rem;
+	line-height: 1.8;
+}
+
+.dx-footer-cities ul {
+	margin-top: 1rem;
+	color: var(--dx-muted-fg);
+	font-size: .875rem;
+	line-height: 1.9;
+}
+
+.e-con.dx-footer-bar {
+	--gap: .75rem;
+	--row-gap: .75rem;
+	margin-top: 3.5rem;
+	padding-top: 1.5rem;
+	border-top: 1px solid var(--dx-line);
+	color: var(--dx-muted-fg);
+	font-family: var(--dx-mono);
+	font-size: .625rem;
+	letter-spacing: .2em;
+	text-transform: uppercase;
+}
+
+/* 6. Utilities ============================================================= */
+
+.dx-sr,
+.dx-sr .elementor-heading-title {
+	position: absolute !important;
+	width: 1px !important;
+	height: 1px !important;
+	margin: -1px !important;
+	padding: 0 !important;
+	overflow: hidden !important;
+	clip: rect(0 0 0 0) !important;
+	white-space: nowrap !important;
+	border: 0 !important;
+}
+
+.dx-muted {
+	color: var(--dx-muted-fg);
+}
+
+/* Empty sections reserved for later phases: invisible on the site, visible drop zones
+   in the Elementor editor. */
+.e-con.dx-reserved {
+	--padding-top: 0px;
+	--padding-bottom: 0px;
+	--min-height: 0px;
+}
+
+.elementor-editor-active .e-con.dx-reserved {
+	--min-height: 6rem;
+	outline: 1px dashed var(--dx-copper-40);
+	outline-offset: -1px;
+}
+
+.dx-rise {
+	animation: dx-rise .8s var(--dx-ease) both;
+}
+
+.dx-rise-delay {
+	animation: dx-rise 1s var(--dx-ease) .12s both;
+}
+
+@keyframes dx-film-in {
+	from {
+		opacity: .5;
+		scale: 1.09;
+	}
+
+	to {
+		opacity: 1;
+		scale: 1.04;
+	}
+}
+
+@keyframes dx-rise {
+	from {
+		opacity: 0;
+		transform: translateY(24px);
+	}
+
+	to {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+@keyframes dx-pan {
+	0%,
+	100% {
+		translate: -1.6% 0;
+	}
+
+	25% {
+		translate: 0 -1.6%;
+	}
+
+	50% {
+		translate: 1.6% 0;
+	}
+
+	75% {
+		translate: 0 1.6%;
+	}
+}
+
+@keyframes dx-orbit {
+	from {
+		opacity: .35;
+		translate: 0 0 0;
+	}
+
+	to {
+		opacity: .8;
+		translate: 0 0 70px;
+	}
+}
+
+/* 7. Responsive ============================================================
+   Elementor breakpoints: mobile ≤639 · mobile extra ≤767 · tablet ≤1023.
+   Grid column counts are set per breakpoint in Elementor; this block only
+   adjusts what Elementor can't express. */
+
+@media (min-width: 640px) {
+	.e-con.dx-footer-bar {
+		flex-direction: row;
+		justify-content: space-between;
+	}
+}
+
+@media (min-width: 768px) {
+	.dx-form-grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.dx-span-2 {
+		grid-column: span 2;
+	}
+
+	.dx-quote-actions {
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+	}
+}
+
+@media (min-width: 1024px) {
+	.dx-depth-rail {
+		display: flex;
+	}
+
+	.e-con.dx-quote-layout {
+		--gap: 6rem;
+		--column-gap: 6rem;
+	}
+
+	.e-con.dx-quote-intro {
+		--position: sticky;
+		top: 8rem;
+	}
+
+	/* Subtle tilt only in the two-column layout; stacked it would clip. */
+	.dx-quote-card {
+		transform: perspective(1200px) rotateY(-2deg) translateZ(0);
+	}
+}
+
+@media (max-width: 1023px) {
+	.dx-header-nav {
+		position: static;
+		flex: none;
+		margin-left: auto;
+	}
+
+	.dx-menu-toggle {
+		display: inline-grid;
+	}
+
+	.dx-nav__list {
+		position: absolute;
+		top: 100%;
+		right: 0;
+		left: 0;
+		display: none;
+		flex-direction: column;
+		align-items: stretch;
+		gap: 0;
+		padding: .5rem var(--dx-inline) 1.5rem;
+		border-bottom: 1px solid var(--dx-line);
+		background: var(--dx-bg);
+		box-shadow: 0 30px 60px var(--dx-bg-60);
+	}
+
+	/* The glass planes would cut across the full-width text column. */
+	.dx-plane,
+	.dx-light-line {
+		display: none;
+	}
+
+	.dx-nav.is-open .dx-nav__list {
+		display: flex;
+	}
+
+	.dx-nav__list li + li {
+		border-top: 1px solid var(--dx-line);
+	}
+
+	.dx-nav__link {
+		display: block;
+		padding-block: 1rem;
+		font-size: .75rem;
+	}
+}
+
+@media (max-width: 639px) {
+	:root {
+		--dx-gutter: 1rem;
+		--dx-section-y: 5rem;
+	}
+
+	.dx-header .e-con.dx-brand {
+		--gap: .6rem;
+		--column-gap: .6rem;
+	}
+
+	.dx-header .dx-brand-name {
+		max-width: 8.5rem;
+		font-size: .58rem;
+		letter-spacing: .1em;
+	}
+
+	.dx-header .dx-logo {
+		--dx-logo-size: 2.5rem;
+	}
+
+	.dx-header-cta .elementor-button {
+		min-height: 2.5rem;
+		padding-inline: .8rem;
+		font-size: .56rem;
+		letter-spacing: .08em;
+	}
+
+	.dx-header-cta .elementor-button-text::after {
+		display: none;
+	}
+
+	.dx-menu-toggle {
+		width: 2.5rem;
+		height: 2.5rem;
+	}
+
+	.e-con.dx-hero {
+		--padding-top: 7rem;
+	}
+
+	.dx-hero-title {
+		font-size: clamp(3.25rem, 17vw, 5rem);
+	}
+
+	.dx-hero-video {
+		object-position: 58% center;
+	}
+
+	.dx-logo--xl {
+		--dx-logo-size: 4.5rem;
+	}
+
+	.e-con > .elementor-widget.dx-hero-logo {
+		margin-block-end: 1rem;
+	}
+
+	.dx-hero .dx-eyebrow {
+		gap: .6rem;
+		font-size: .6rem;
+		letter-spacing: .18em;
+	}
+
+	.dx-hero .dx-eyebrow::before {
+		width: 1.5rem;
+	}
+
+	.dx-plane,
+	.dx-light-line {
+		display: none;
+	}
+
+	.dx-hero-shade {
+		background:
+			linear-gradient(90deg, rgb(13 9 7 / .95), rgb(13 9 7 / .35)),
+			linear-gradient(0deg, var(--dx-bg), transparent 50%);
+	}
+
+	.dx-hero-cities ul {
+		gap: .4rem .9rem;
+		font-size: .66rem;
+		letter-spacing: .06em;
+	}
+
+	.e-con.dx-city-grid {
+		transform: none;
+	}
+
+	.e-con.dx-city-cell {
+		--padding-top: 1.25rem;
+		--padding-right: 1.25rem;
+		--padding-bottom: 1.25rem;
+		--padding-left: 1.25rem;
+		--min-height: 9rem;
+	}
+
+	.dx-city-cell .dx-card-title {
+		font-size: 1.6rem;
+	}
+
+	.e-con.dx-process-grid {
+		--row-gap: 2.5rem;
+		margin-top: 3rem;
+	}
+
+	.dx-process-number {
+		font-size: 3.75rem;
+	}
+
+	.e-con.dx-quote-band,
+	.e-con.dx-testimonial {
+		--padding-top: 5rem;
+		--padding-bottom: 5rem;
+	}
+
+	.dx-quote-title {
+		font-size: 3.2rem;
+	}
+
+	/* Keep the decorative rings inside a phone-width band. */
+	.dx-orbit {
+		bottom: -9rem;
+		left: -8rem;
+		width: 24rem;
+	}
+
+	.dx-orbit i:nth-child(2) {
+		inset: 3rem;
+	}
+
+	.dx-orbit i:nth-child(3) {
+		inset: 6rem;
+	}
+}
+
+@media (max-width: 379px) {
+	/* Very narrow phones: keep the monogram, hide the wordmark visually. */
+	.dx-header .dx-brand-name {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		overflow: hidden;
+		clip: rect(0 0 0 0);
+		white-space: nowrap;
+	}
+}
+
+/* 8. Accessibility & reduced motion ======================================== */
+
+:focus-visible {
+	outline: 2px solid var(--dx-copper);
+	outline-offset: 3px;
+}
+
+.dx-skip-link {
+	position: absolute;
+	top: 1rem;
+	left: 1rem;
+	z-index: 1000;
+	padding: .8rem 1.1rem;
+	border-radius: 999px;
+	background: var(--dx-copper);
+	color: var(--dx-bg);
+	font-family: var(--dx-mono);
+	font-size: .7rem;
+	font-weight: 700;
+	letter-spacing: .12em;
+	text-transform: uppercase;
+	transform: translateY(-200%);
+	transition: transform .2s;
+}
+
+.dx-skip-link:focus {
+	transform: none;
+}
+
+#main:focus,
+.e-con[tabindex="-1"]:focus {
+	outline: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+
+	*,
+	*::before,
+	*::after {
+		animation-duration: .01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: .01ms !important;
+	}
+
+	.dx-plane,
+	.dx-light-line,
+	.dx-hero-video,
+	.e-con.dx-city-grid,
+	.dx-quote-card {
+		transform: none !important;
+		translate: none !important;
+	}
+
+	.e-con.dx-fleet-card:hover {
+		transform: none;
+	}
+
+	.dx-fleet-media::after {
+		display: none;
+	}
+}
+
+@media (forced-colors: active) {
+	.dx-btn .elementor-button,
+	button.dx-btn,
+	.dx-social__link,
+	.dx-menu-toggle,
+	.dx-video-toggle {
+		border: 1px solid ButtonText;
+	}
+}

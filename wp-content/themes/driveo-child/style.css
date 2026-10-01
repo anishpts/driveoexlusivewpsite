@@ -1,0 +1,13 @@
+/*
+Theme Name:   Driveo Child
+Theme URI:    https://example.com/
+Description:  One-page luxury chauffeur site for Elementor, built on Hello Elementor. Design styles live in assets/css/driveo.css.
+Author:       Technoprofile
+Template:     hello-elementor
+Version:      1.0.0
+Requires PHP: 8.1
+Text Domain:  driveo-child
+License:      GPL-2.0-or-later
+*/
+
+/* Intentionally empty: styles are enqueued from assets/css/driveo.css. */

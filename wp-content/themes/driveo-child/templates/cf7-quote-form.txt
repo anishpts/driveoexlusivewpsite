@@ -1,0 +1,105 @@
+<div class="dx-quote-fields">
+<div class="dx-form-grid">
+
+<div class="dx-field">
+<label class="dx-field__label" for="dx-client-name">Name</label>
+[text* client-name id:dx-client-name autocomplete:name maxlength:80 placeholder "Your full name"]
+</div>
+
+<div class="dx-field">
+<label class="dx-field__label" for="dx-client-email">Email</label>
+[email* client-email id:dx-client-email autocomplete:email maxlength:254 placeholder "you@example.com"]
+</div>
+
+<div class="dx-field">
+<label class="dx-field__label" for="dx-client-phone">Phone</label>
+[tel* client-phone id:dx-client-phone autocomplete:tel minlength:7 maxlength:40 placeholder "+44"]
+</div>
+
+<div class="dx-field">
+<label class="dx-field__label" for="dx-city">City</label>
+<span class="dx-select">[select* city id:dx-city first_as_label "Select city" "London" "Paris" "Bulgaria" "Dubai"]</span>
+</div>
+
+<div class="dx-field">
+<label class="dx-field__label" for="dx-journey-type">Service</label>
+<span class="dx-select">[select* journey-type id:dx-journey-type first_as_label "Select service" "Airport transfer" "Point to point" "Hourly hire" "Events & long distance"]</span>
+</div>
+
+<div class="dx-field">
+<label class="dx-field__label" for="dx-vehicle">Vehicle</label>
+<span class="dx-select">[select* vehicle id:dx-vehicle default:4 "Business Class" "First Class" "Business Van" "Please advise"]</span>
+</div>
+
+<div class="dx-field dx-span-2">
+<label class="dx-field__label" for="dx-pickup">Pickup location</label>
+[text* pickup id:dx-pickup autocomplete:street-address minlength:2 maxlength:300 placeholder "Address, hotel or airport"]
+</div>
+
+<div class="dx-field dx-span-2" data-when="point">
+<label class="dx-field__label" for="dx-destination">Destination</label>
+[text destination id:dx-destination maxlength:300 placeholder "Where are we taking you?"]
+</div>
+
+<div class="dx-field dx-span-2" data-when="hourly">
+<label class="dx-field__label" for="dx-hours">Hours</label>
+<span class="dx-select">[select hours id:dx-hours first_as_label "Select hours" "2 hours" "3 hours" "4 hours" "5 hours" "6 hours" "7 hours" "8 hours" "9 hours" "10 hours" "11 hours" "12 hours" "13 hours" "14 hours" "15 hours" "16 hours"]</span>
+<small class="dx-field__hint" id="dx-hours-note">Each booked hour includes up to 15 miles within the city. Journeys beyond that area may be priced separately.</small>
+</div>
+
+<div class="dx-field">
+<label class="dx-field__label" for="dx-pickup-date">Date</label>
+[date* pickup-date id:dx-pickup-date min:today]
+</div>
+
+<div class="dx-field">
+<label class="dx-field__label" for="dx-pickup-time">Pickup time</label>
+[time* pickup-time id:dx-pickup-time]
+</div>
+
+<div class="dx-field dx-stepper">
+<label class="dx-field__label" for="dx-passengers">Passengers</label>
+<div class="dx-stepper__control">
+<button type="button" class="dx-stepper__btn" data-step="-1" aria-controls="dx-passengers" aria-label="Decrease passengers"><span aria-hidden="true">−</span></button>
+[number* passengers id:dx-passengers min:1 max:7 "1"]
+<button type="button" class="dx-stepper__btn" data-step="1" aria-controls="dx-passengers" aria-label="Increase passengers"><span aria-hidden="true">+</span></button>
+</div>
+<small class="dx-field__hint" id="dx-passengers-hint" aria-live="polite">Maximum <span data-limit>4</span> passengers</small>
+</div>
+
+<div class="dx-field dx-stepper">
+<label class="dx-field__label" for="dx-luggage">Luggage</label>
+<div class="dx-stepper__control">
+<button type="button" class="dx-stepper__btn" data-step="-1" aria-controls="dx-luggage" aria-label="Decrease luggage"><span aria-hidden="true">−</span></button>
+[number* luggage id:dx-luggage min:0 max:8 "0"]
+<button type="button" class="dx-stepper__btn" data-step="1" aria-controls="dx-luggage" aria-label="Increase luggage"><span aria-hidden="true">+</span></button>
+</div>
+<small class="dx-field__hint" id="dx-luggage-hint" aria-live="polite">Maximum <span data-limit>3</span> bags</small>
+</div>
+
+<div class="dx-field dx-span-2">
+<label class="dx-field__label" for="dx-notes">Notes</label>
+[textarea notes id:dx-notes maxlength:1500 x4 placeholder "Flight number, extra stops, child seats or other requests"]
+</div>
+
+</div>
+
+<div class="dx-trap" aria-hidden="true">
+<label for="dx-website">Leave this field empty</label>
+<input type="text" id="dx-website" name="dx-website" tabindex="-1" autocomplete="off">
+</div>
+
+<div class="dx-quote-actions">
+<p>Your details are kept private and used only to arrange this journey.</p>
+[submit class:dx-quote-submit "Request fixed quote"]
+</div>
+<p class="dx-busy-label" hidden>Securing request…</p>
+</div>
+
+<div class="dx-quote-success" hidden tabindex="-1">
+<p class="dx-eyebrow">Request received</p>
+<h3>Thank you. Your journey is with us.</h3>
+<p>A member of our team will reply shortly with a fixed, all-inclusive fare.</p>
+<p class="dx-quote-ref-line" hidden>Your reference is <strong class="dx-quote-ref"></strong>.</p>
+<button type="button" class="dx-quote-again">Send another request</button>
+</div>
